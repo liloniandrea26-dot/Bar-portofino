@@ -36,7 +36,7 @@ export default function Hero({ dict, locale }: { dict: Dictionary; locale: Local
         className="object-cover"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-b from-deep/70 via-deep/40 to-deep/75"
+        className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink/75"
         aria-hidden="true"
       />
 
@@ -57,12 +57,12 @@ export default function Hero({ dict, locale }: { dict: Dictionary; locale: Local
             transition={{ delay: 0.2, duration: 0.6 }}
             className={`mx-auto mb-6 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold backdrop-blur-sm ${
               isOpen
-                ? "bg-aqua/20 text-aqua ring-1 ring-aqua/40"
-                : "bg-coral/25 text-white ring-1 ring-coral/50"
+                ? "bg-sage/20 text-sage ring-1 ring-sage/40"
+                : "bg-brass/25 text-white ring-1 ring-brass/50"
             }`}
           >
             <span
-              className={`h-2.5 w-2.5 rounded-full ${isOpen ? "animate-pulse-slow bg-aqua" : "bg-coral"}`}
+              className={`h-2.5 w-2.5 rounded-full ${isOpen ? "animate-pulse-slow bg-sage" : "bg-brass"}`}
             />
             {isOpen ? dict.status.open : dict.status.closed}
           </motion.p>
@@ -124,7 +124,7 @@ export default function Hero({ dict, locale }: { dict: Dictionary; locale: Local
           <motion.div
             animate={{ y: [0, 14, 0], opacity: [1, 0.2, 1] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="h-2.5 w-1.5 rounded-full bg-sunset"
+            className="h-2.5 w-1.5 rounded-full bg-champagne"
           />
         </div>
       </motion.div>

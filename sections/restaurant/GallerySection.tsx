@@ -27,7 +27,7 @@ export default function GallerySection({ dict }: { dict: Dictionary }) {
     <section className="bg-cream py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-coral">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-brass">
             {dict.gallery.eyebrow}
           </p>
           <h2 className="heading-hero text-3xl md:text-5xl">{dict.gallery.title}</h2>
@@ -50,7 +50,7 @@ export default function GallerySection({ dict }: { dict: Dictionary }) {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <span
-                  className="absolute inset-0 bg-deep/0 transition-colors duration-300 group-hover:bg-deep/25"
+                  className="absolute inset-0 bg-ink/0 transition-colors duration-300 group-hover:bg-ink/25"
                   aria-hidden="true"
                 />
               </button>

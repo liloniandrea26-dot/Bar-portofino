@@ -28,13 +28,13 @@ export default function PrivacyPage({ params }: { params: { locale: string } }) 
       <div className="bg-cream py-20">
         <div className="mx-auto flex max-w-3xl flex-col gap-8 px-5 md:px-8">
           <Reveal>
-            <p className="text-sm font-semibold text-deep/50">{dict.privacyPage.updated}</p>
+            <p className="text-sm font-semibold text-ink/50">{dict.privacyPage.updated}</p>
           </Reveal>
           {dict.privacyPage.sections.map((section, i) => (
             <Reveal key={section.h} delay={i * 0.08}>
-              <section className="rounded-3xl bg-white p-7 shadow-lg shadow-deep/5 ring-1 ring-deep/5">
+              <section className="rounded-3xl bg-white p-7 shadow-lg shadow-ink/5 ring-1 ring-ink/5">
                 <h2 className="font-display text-xl font-semibold">{section.h}</h2>
-                <p className="mt-3 leading-relaxed text-deep/75">{section.p}</p>
+                <p className="mt-3 leading-relaxed text-ink/75">{section.p}</p>
               </section>
             </Reveal>
           ))}

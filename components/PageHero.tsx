@@ -29,7 +29,7 @@ export default function PageHero({
     <section className="relative flex min-h-[46vh] items-end overflow-hidden pb-14 pt-36" data-cursor-zone>
       <Image src={image} alt={imageAlt} fill priority sizes="100vw" className="object-cover" />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-deep/90 via-deep/40 to-deep/30"
+        className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-ink/30"
         aria-hidden="true"
       />
 
@@ -41,11 +41,11 @@ export default function PageHero({
           transition={{ duration: 0.6 }}
           className="mb-4 flex items-center gap-2 text-sm font-medium text-white/70"
         >
-          <Link href={homeHref} className="transition-colors hover:text-sunset">
+          <Link href={homeHref} className="transition-colors hover:text-champagne">
             {homeLabel}
           </Link>
           <span aria-hidden="true">/</span>
-          <span className="text-sunset">{breadcrumb}</span>
+          <span className="text-champagne">{breadcrumb}</span>
         </motion.nav>
 
         <motion.h1

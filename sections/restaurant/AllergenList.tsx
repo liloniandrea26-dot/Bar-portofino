@@ -12,7 +12,7 @@ export default function AllergenList({ dict }: { dict: Dictionary }) {
   return (
     <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
       <Reveal>
-        <p className="mx-auto max-w-3xl text-center text-lg leading-relaxed text-deep/80">
+        <p className="mx-auto max-w-3xl text-center text-lg leading-relaxed text-ink/80">
           {dict.allergensPage.intro}
         </p>
       </Reveal>
@@ -21,19 +21,19 @@ export default function AllergenList({ dict }: { dict: Dictionary }) {
         {dict.allergensPage.items.map((item, i) => (
           <Reveal key={item.name} delay={(i % 3) * 0.08} className="h-full">
             <TiltCard className="h-full">
-              <li className="flex h-full items-start gap-4 rounded-3xl bg-white p-6 shadow-lg shadow-deep/5 ring-1 ring-deep/5">
+              <li className="flex h-full items-start gap-4 rounded-3xl bg-white p-6 shadow-lg shadow-ink/5 ring-1 ring-ink/5">
                 <span
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sand-light text-2xl"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-linen text-2xl"
                   aria-hidden="true"
                 >
                   {item.icon}
                 </span>
                 <div>
                   <h2 className="font-display text-lg font-semibold leading-snug">
-                    <span className="mr-1.5 text-sm font-bold text-coral">{i + 1}.</span>
+                    <span className="mr-1.5 text-sm font-bold text-brass">{i + 1}.</span>
                     {item.name}
                   </h2>
-                  <p className="mt-1.5 text-sm leading-relaxed text-deep/65">{item.examples}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink/65">{item.examples}</p>
                 </div>
               </li>
             </TiltCard>
@@ -42,7 +42,7 @@ export default function AllergenList({ dict }: { dict: Dictionary }) {
       </ol>
 
       <Reveal className="mt-14">
-        <p className="rounded-3xl border-l-4 border-coral bg-sand-light p-6 text-sm leading-relaxed text-deep/80">
+        <p className="rounded-3xl border-l-4 border-brass bg-linen p-6 text-sm leading-relaxed text-ink/80">
           ⚠️ {dict.allergensPage.disclaimer}
         </p>
       </Reveal>

@@ -40,7 +40,7 @@ export default function Pizza3D() {
     <>
       <ambientLight intensity={0.85} />
       <directionalLight position={[4, 6, 4]} intensity={1.5} color="#FFF4E0" />
-      <pointLight position={[-4, 3, -2]} intensity={0.5} color="#FF7A59" />
+      <pointLight position={[-4, 3, -2]} intensity={0.5} color="#C9AF8B" />
 
       <Float speed={1.4} rotationIntensity={0.2} floatIntensity={0.5}>
         <group ref={group} rotation={[0.5, 0, 0.06]} scale={1.05}>

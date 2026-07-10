@@ -16,16 +16,17 @@ const Pizza3D = dynamic(() => import("@/three/Pizza3D"), { ssr: false });
  */
 export default function MenuCTA({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   return (
-    <section className="relative overflow-hidden bg-sea py-24 text-white md:py-32">
+    // Unica sezione scura del sito: dà profondità all'identità chiara
+    <section className="grain-texture-dark relative overflow-hidden py-24 text-white md:py-32">
       <div
-        className="absolute inset-0 bg-gradient-to-br from-deep via-sea to-deep"
+        className="absolute inset-0 bg-gradient-to-br from-ink/0 via-[#2b2620]/60 to-ink/0"
         aria-hidden="true"
       />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2">
         <div>
           <Reveal>
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-sunset">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-champagne">
               {dict.menuSection.eyebrow}
             </p>
             <h2 className="heading-hero text-3xl md:text-5xl">{dict.menuSection.title}</h2>
@@ -50,7 +51,7 @@ export default function MenuCTA({ dict, locale }: { dict: Dictionary; locale: Lo
           <Reveal delay={0.35}>
             <Link
               href={`/${locale}/allergeni`}
-              className="group mt-6 inline-flex items-center gap-2 font-bold text-sunset"
+              className="group mt-6 inline-flex items-center gap-2 font-bold text-champagne"
             >
               ⚠️ {dict.menuSection.allergensLink}
               <span

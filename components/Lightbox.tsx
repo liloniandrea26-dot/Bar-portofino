@@ -57,7 +57,7 @@ export default function Lightbox({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[90] flex items-center justify-center bg-deep/95 backdrop-blur-sm"
+          className="fixed inset-0 z-[90] flex items-center justify-center bg-ink/95 backdrop-blur-sm"
           onClick={onClose}
         >
           <motion.div
@@ -96,7 +96,7 @@ export default function Lightbox({
               prev();
             }}
             aria-label="Foto precedente"
-            className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-coral md:left-8"
+            className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-brass md:left-8"
           >
             ←
           </button>
@@ -107,7 +107,7 @@ export default function Lightbox({
               next();
             }}
             aria-label="Foto successiva"
-            className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-coral md:right-8"
+            className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-brass md:right-8"
           >
             →
           </button>
@@ -115,7 +115,7 @@ export default function Lightbox({
             type="button"
             onClick={onClose}
             aria-label="Chiudi la galleria"
-            className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl text-white transition hover:bg-coral md:right-8 md:top-8"
+            className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl text-white transition hover:bg-brass md:right-8 md:top-8"
           >
             ✕
           </button>

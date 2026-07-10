@@ -10,15 +10,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Palette "Adriatico al tramonto"
-        deep: "#0A3153", // blu Adriatico profondo
-        sea: "#14557E", // blu mare medio
-        aqua: "#4EC5C1", // turchese acqua bassa
-        sand: "#EAD9BE", // sabbia calda
-        "sand-light": "#F7F1E3", // sabbia chiarissima / crema
-        coral: "#FF7A59", // corallo tramonto (accento)
-        sunset: "#F5A25D", // arancio tramonto
-        cream: "#FDFBF6", // bianco caldo di respiro
+        // Palette "Bianco & Ottone" — chiara, neutra, elegante
+        ink: "#201D19", // quasi-nero caldo: testi e sezioni scure
+        smoke: "#6B6459", // grigio caldo: testi secondari
+        sage: "#7D8C72", // verde spento: stato "Aperto"
+        stone: "#E7E1D6", // neutro medio: bordi, superfici
+        linen: "#F5F2EC", // lino chiaro: sfondi alternati
+        brass: "#9A6B3F", // ottone brunito: unico accento
+        champagne: "#C9AF8B", // champagne: accento soft su fondi scuri
+        cream: "#FDFCF9", // bianco caldo: fondo principale
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "Georgia", "serif"],

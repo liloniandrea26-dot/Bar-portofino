@@ -52,7 +52,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        solid ? "bg-cream/85 shadow-lg shadow-deep/5 backdrop-blur-md" : "bg-transparent"
+        solid ? "bg-cream/85 shadow-lg shadow-ink/5 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
@@ -69,7 +69,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
             href={restaurantConfig.phone.href}
             className={`btn-liquid hidden text-sm md:inline-flex ${
               solid
-                ? "bg-deep text-white hover:bg-sea"
+                ? "bg-ink text-white hover:bg-smoke"
                 : "bg-white/15 text-white ring-1 ring-white/40 backdrop-blur-sm hover:bg-white/25"
             }`}
           >
@@ -86,7 +86,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
             aria-expanded={menuOpen}
             aria-label={menuOpen ? dict.nav.closeMenu : dict.nav.openMenu}
             className={`flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full ${
-              solid ? "text-deep" : "text-white"
+              solid ? "text-ink" : "text-white"
             }`}
           >
             <motion.span
@@ -113,7 +113,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
             animate={{ opacity: 1, clipPath: "circle(150% at 92% 5%)" }}
             exit={{ opacity: 0, clipPath: "circle(0% at 92% 5%)" }}
             transition={{ duration: 0.55, ease: [0.83, 0, 0.17, 1] }}
-            className="sand-texture-dark fixed inset-0 top-0 z-[-1] flex h-screen flex-col justify-between pb-10 pt-28"
+            className="grain-texture-dark fixed inset-0 top-0 z-[-1] flex h-screen flex-col justify-between pb-10 pt-28"
           >
             <nav aria-label="Menu" className="flex flex-col gap-1 px-8 md:px-16">
               {links.map((link, i) => (
@@ -126,7 +126,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
                   <Link
                     href={link.href}
                     className={`block py-3 font-display text-3xl font-semibold md:text-4xl ${
-                      pathname === link.href ? "text-coral" : "text-white hover:text-sunset"
+                      pathname === link.href ? "text-brass" : "text-white hover:text-champagne"
                     } transition-colors`}
                   >
                     {link.label}
@@ -141,7 +141,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
               >
                 <a
                   href={restaurantConfig.phone.href}
-                  className="block py-3 font-display text-3xl font-semibold text-white transition-colors hover:text-sunset md:text-4xl"
+                  className="block py-3 font-display text-3xl font-semibold text-white transition-colors hover:text-champagne md:text-4xl"
                 >
                   {dict.nav.call} <span aria-hidden="true">→</span>
                 </a>
@@ -168,7 +168,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-coral"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-brass"
                 >
                   <FacebookIcon />
                 </a>
@@ -177,14 +177,14 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-coral"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-brass"
                 >
                   <InstagramIcon />
                 </a>
                 <a
                   href={restaurantConfig.phone.href}
                   aria-label={`${dict.nav.call}: ${restaurantConfig.phone.display}`}
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-coral"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-brass"
                 >
                   <PhoneIcon />
                 </a>
@@ -228,9 +228,9 @@ function LanguageSwitcher({
             large ? "px-4 py-2 text-sm" : "px-2.5 py-1.5 text-xs"
           } ${
             l === locale
-              ? "bg-coral text-white"
+              ? "bg-brass text-white"
               : solid
-                ? "text-deep/70 hover:text-coral"
+                ? "text-ink/70 hover:text-brass"
                 : "text-white/80 hover:text-white"
           }`}
         >

@@ -24,7 +24,7 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
   ];
 
   return (
-    <footer className="sand-texture-dark relative text-white">
+    <footer className="grain-texture-dark relative text-white">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-10 pt-20 md:grid-cols-2 md:px-8 lg:grid-cols-4">
         {/* Colonna 1: logo + social */}
         <div className="flex flex-col gap-5">
@@ -36,7 +36,7 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:bg-coral"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:bg-brass"
             >
               <FacebookIcon />
             </a>
@@ -45,7 +45,7 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:bg-coral"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:bg-brass"
             >
               <InstagramIcon />
             </a>
@@ -54,14 +54,14 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
 
         {/* Colonna 2: link rapidi */}
         <nav aria-label={dict.footer.quickLinks} className="flex flex-col gap-3">
-          <h3 className="font-display text-lg font-semibold text-sunset">
+          <h3 className="font-display text-lg font-semibold text-champagne">
             {dict.footer.quickLinks}
           </h3>
           {quickLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="w-fit text-sm text-white/75 transition-colors hover:text-coral"
+              className="w-fit text-sm text-white/75 transition-colors hover:text-brass"
             >
               {link.label}
             </Link>
@@ -70,19 +70,19 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
 
         {/* Colonna 3: contatti + P.IVA */}
         <div className="flex flex-col gap-3 text-sm">
-          <h3 className="font-display text-lg font-semibold text-sunset">
+          <h3 className="font-display text-lg font-semibold text-champagne">
             {dict.footer.contacts}
           </h3>
           <p className="text-white/75">{restaurantConfig.address}</p>
           <a
             href={restaurantConfig.phone.href}
-            className="w-fit text-white/75 transition-colors hover:text-coral"
+            className="w-fit text-white/75 transition-colors hover:text-brass"
           >
             {restaurantConfig.phone.display}
           </a>
           <a
             href={restaurantConfig.email.href}
-            className="w-fit break-all text-white/75 transition-colors hover:text-coral"
+            className="w-fit break-all text-white/75 transition-colors hover:text-brass"
           >
             {restaurantConfig.email.display}
           </a>
@@ -91,17 +91,17 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
 
         {/* Colonna 4: orari sintetici + stato apertura */}
         <div className="flex flex-col gap-4">
-          <h3 className="font-display text-lg font-semibold text-sunset">
+          <h3 className="font-display text-lg font-semibold text-champagne">
             {dict.footer.hoursTitle}
           </h3>
           {isOpen !== null && (
             <p
               className={`inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-sm font-bold ${
-                isOpen ? "bg-aqua/20 text-aqua" : "bg-coral/20 text-coral"
+                isOpen ? "bg-sage/20 text-sage" : "bg-brass/20 text-brass"
               }`}
             >
               <span
-                className={`h-2.5 w-2.5 rounded-full ${isOpen ? "animate-pulse-slow bg-aqua" : "bg-coral"}`}
+                className={`h-2.5 w-2.5 rounded-full ${isOpen ? "animate-pulse-slow bg-sage" : "bg-brass"}`}
               />
               {isOpen ? dict.status.open : dict.status.closed}
             </p>
@@ -130,7 +130,7 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
             © {new Date().getFullYear()} {dict.brand.name} — {restaurantConfig.vat}
           </p>
           <div className="flex items-center gap-4">
-            <Link href={`${base}/privacy`} className="transition-colors hover:text-coral">
+            <Link href={`${base}/privacy`} className="transition-colors hover:text-brass">
               {dict.nav.privacy}
             </Link>
             <p>{dict.footer.credits}</p>
