@@ -5,13 +5,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "@/components/Logo";
-import { navLinks, siteConfig } from "@/data/content";
+import { restaurantConfig } from "@/data/config";
+import { locales, type Dictionary, type Locale } from "@/lib/i18n";
 
 /**
- * Header sticky: trasparente sopra l'hero, diventa chiaro con blur allo scroll.
- * Su mobile apre un overlay full-screen animato.
+ * Header essenziale come da riferimento UX:
+ * logo a sinistra; a destra bottone "Chiamaci" (click-to-call),
+ * selettore lingua e hamburger che apre l'overlay full-screen con
+ * Home · Informazioni · Menu · Allergeni · Chiamaci · lingue · social.
  */
-export default function Header() {
+export default function Header({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -23,12 +26,12 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Chiude il menu mobile a ogni cambio pagina
+  // Chiude l'overlay a ogni cambio pagina
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Blocca lo scroll del body quando il menu mobile è aperto
+  // Blocca lo scroll del body quando l'overlay è aperto
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -37,70 +40,52 @@ export default function Header() {
   }, [menuOpen]);
 
   const solid = scrolled || menuOpen;
+  const base = `/${locale}`;
+
+  const links = [
+    { label: dict.nav.home, href: base },
+    { label: dict.nav.info, href: `${base}/informazioni` },
+    { label: dict.nav.menu, href: `${base}/menu` },
+    { label: dict.nav.allergens, href: `${base}/allergeni` },
+  ];
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        solid
-          ? "bg-cream/85 shadow-lg shadow-deep/5 backdrop-blur-md"
-          : "bg-transparent"
+        solid ? "bg-cream/85 shadow-lg shadow-deep/5 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
-        <Logo light={!solid} />
+        <Logo
+          name={dict.brand.name}
+          tagline={dict.brand.tagline}
+          href={base}
+          light={!solid}
+        />
 
-        {/* Navigazione desktop */}
-        <nav aria-label="Navigazione principale" className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((link) => {
-            const active = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`relative rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                  solid
-                    ? active
-                      ? "text-coral"
-                      : "text-deep hover:text-coral"
-                    : active
-                      ? "text-sunset"
-                      : "text-white/90 hover:text-white"
-                }`}
-              >
-                {link.label}
-                {active && (
-                  <motion.span
-                    layoutId="nav-dot"
-                    className="absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-coral"
-                  />
-                )}
-              </Link>
-            );
-          })}
-        </nav>
-
-        <div className="flex items-center gap-3">
-          {/* CTA: nessuna prenotazione online, solo invito a venire */}
+        <div className="flex items-center gap-2 md:gap-3">
+          {/* Click-to-call, sempre visibile */}
           <a
-            href={siteConfig.maps.directionsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={restaurantConfig.phone.href}
             className={`btn-liquid hidden text-sm md:inline-flex ${
               solid
                 ? "bg-deep text-white hover:bg-sea"
                 : "bg-white/15 text-white ring-1 ring-white/40 backdrop-blur-sm hover:bg-white/25"
             }`}
           >
-            Vieni a trovarci
+            📞 {dict.nav.call}
           </a>
 
-          {/* Hamburger mobile */}
+          {/* Selettore lingua compatto (desktop) */}
+          <LanguageSwitcher locale={locale} solid={solid} className="hidden md:flex" />
+
+          {/* Hamburger (mobile e desktop: menu essenziale) */}
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
             aria-expanded={menuOpen}
-            aria-label={menuOpen ? "Chiudi il menu" : "Apri il menu"}
-            className={`flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full lg:hidden ${
+            aria-label={menuOpen ? dict.nav.closeMenu : dict.nav.openMenu}
+            className={`flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full ${
               solid ? "text-deep" : "text-white"
             }`}
           >
@@ -120,7 +105,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Overlay mobile full-screen */}
+      {/* Overlay full-screen */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -128,10 +113,10 @@ export default function Header() {
             animate={{ opacity: 1, clipPath: "circle(150% at 92% 5%)" }}
             exit={{ opacity: 0, clipPath: "circle(0% at 92% 5%)" }}
             transition={{ duration: 0.55, ease: [0.83, 0, 0.17, 1] }}
-            className="sand-texture-dark fixed inset-0 top-0 z-[-1] flex h-screen flex-col justify-between pb-10 pt-28 lg:hidden"
+            className="sand-texture-dark fixed inset-0 top-0 z-[-1] flex h-screen flex-col justify-between pb-10 pt-28"
           >
-            <nav aria-label="Navigazione mobile" className="flex flex-col gap-1 px-8">
-              {navLinks.map((link, i) => (
+            <nav aria-label="Menu" className="flex flex-col gap-1 px-8 md:px-16">
+              {links.map((link, i) => (
                 <motion.div
                   key={link.href}
                   initial={{ opacity: 0, x: -24 }}
@@ -140,26 +125,46 @@ export default function Header() {
                 >
                   <Link
                     href={link.href}
-                    className={`block py-3 font-display text-3xl font-semibold ${
-                      pathname === link.href ? "text-coral" : "text-white"
-                    }`}
+                    className={`block py-3 font-display text-3xl font-semibold md:text-4xl ${
+                      pathname === link.href ? "text-coral" : "text-white hover:text-sunset"
+                    } transition-colors`}
                   >
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
+              {/* Chiamaci dentro l'overlay (essenziale su mobile) */}
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.15 + links.length * 0.06 }}
+              >
+                <a
+                  href={restaurantConfig.phone.href}
+                  className="block py-3 font-display text-3xl font-semibold text-white transition-colors hover:text-sunset md:text-4xl"
+                >
+                  {dict.nav.call} <span aria-hidden="true">→</span>
+                </a>
+              </motion.div>
             </nav>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-col gap-4 px-8"
+              className="flex flex-col gap-5 px-8 md:px-16"
             >
-              <p className="text-sm text-white/70">{siteConfig.hours.display}</p>
+              {/* Cambio lingua nell'overlay */}
+              <div>
+                <p className="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-white/50">
+                  {dict.nav.language}
+                </p>
+                <LanguageSwitcher locale={locale} solid={false} large />
+              </div>
+
               <div className="flex gap-4">
                 <a
-                  href={siteConfig.social.facebook}
+                  href={restaurantConfig.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -168,7 +173,7 @@ export default function Header() {
                   <FacebookIcon />
                 </a>
                 <a
-                  href={siteConfig.social.instagram}
+                  href={restaurantConfig.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -177,8 +182,8 @@ export default function Header() {
                   <InstagramIcon />
                 </a>
                 <a
-                  href={siteConfig.phone.href}
-                  aria-label={`Chiama ${siteConfig.phone.display}`}
+                  href={restaurantConfig.phone.href}
+                  aria-label={`${dict.nav.call}: ${restaurantConfig.phone.display}`}
                   className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-coral"
                 >
                   <PhoneIcon />
@@ -189,6 +194,50 @@ export default function Header() {
         )}
       </AnimatePresence>
     </header>
+  );
+}
+
+/** Selettore lingua IT / EN / DE: mantiene il percorso corrente */
+function LanguageSwitcher({
+  locale,
+  solid,
+  large = false,
+  className = "",
+}: {
+  locale: Locale;
+  solid: boolean;
+  large?: boolean;
+  className?: string;
+}) {
+  const pathname = usePathname();
+
+  const pathFor = (target: string) => {
+    const parts = pathname.split("/");
+    parts[1] = target; // sostituisce il segmento lingua
+    return parts.join("/") || `/${target}`;
+  };
+
+  return (
+    <div className={`flex items-center gap-1 ${className}`} role="group" aria-label="Language">
+      {locales.map((l) => (
+        <Link
+          key={l}
+          href={pathFor(l)}
+          aria-current={l === locale ? "true" : undefined}
+          className={`rounded-full font-bold uppercase transition-colors ${
+            large ? "px-4 py-2 text-sm" : "px-2.5 py-1.5 text-xs"
+          } ${
+            l === locale
+              ? "bg-coral text-white"
+              : solid
+                ? "text-deep/70 hover:text-coral"
+                : "text-white/80 hover:text-white"
+          }`}
+        >
+          {l}
+        </Link>
+      ))}
+    </div>
   );
 }
 

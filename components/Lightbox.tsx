@@ -3,7 +3,7 @@
 import { useCallback, useEffect } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import type { GalleryImage } from "@/data/content";
+import type { GalleryImage } from "@/data/config";
 
 /**
  * Lightbox full-screen con navigazione frecce/tastiera/swipe

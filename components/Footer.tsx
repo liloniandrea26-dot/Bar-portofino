@@ -3,38 +3,36 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import { FacebookIcon, InstagramIcon } from "@/components/Header";
-import { navLinks, siteConfig } from "@/data/content";
-import { useOpenStatus } from "@/lib/hooks";
+import { restaurantConfig } from "@/data/config";
+import { useOpenNow } from "@/lib/hooks";
+import type { Dictionary, Locale } from "@/lib/i18n";
 
-/** Footer globale: logo+social, link rapidi, contatti, mini-mappa + stato apertura */
-export default function Footer() {
-  const isOpen = useOpenStatus(siteConfig.hours.open, siteConfig.hours.close);
+/**
+ * Footer globale: logo+social, link rapidi, contatti con P.IVA,
+ * orari sintetici con stato "Aperto/Chiuso" e link Privacy Policy.
+ */
+export default function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
+  const isOpen = useOpenNow(restaurantConfig.weekHours);
+  const base = `/${locale}`;
+
+  const quickLinks = [
+    { label: dict.nav.home, href: base },
+    { label: dict.nav.info, href: `${base}/informazioni` },
+    { label: dict.nav.menu, href: `${base}/menu` },
+    { label: dict.nav.allergens, href: `${base}/allergeni` },
+    { label: dict.nav.privacy, href: `${base}/privacy` },
+  ];
 
   return (
     <footer className="sand-texture-dark relative text-white">
-      {/* Onda di raccordo con la sezione precedente */}
-      <svg
-        viewBox="0 0 1440 60"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-        className="absolute -top-px left-0 h-10 w-full rotate-180 text-cream"
-      >
-        <path
-          d="M0,32 C240,64 480,0 720,24 C960,48 1200,16 1440,40 L1440,60 L0,60 Z"
-          fill="currentColor"
-        />
-      </svg>
-
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-10 pt-24 md:grid-cols-2 md:px-8 lg:grid-cols-4">
-        {/* Colonna 1: logo + payoff + social */}
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-10 pt-20 md:grid-cols-2 md:px-8 lg:grid-cols-4">
+        {/* Colonna 1: logo + social */}
         <div className="flex flex-col gap-5">
-          <Logo light />
-          <p className="max-w-xs text-sm leading-relaxed text-white/70">
-            {siteConfig.payoff}
-          </p>
+          <Logo name={dict.brand.name} tagline={dict.brand.tagline} href={base} light />
+          <p className="max-w-xs text-sm leading-relaxed text-white/70">{dict.hero.subtitle}</p>
           <div className="flex gap-3">
             <a
-              href={siteConfig.social.facebook}
+              href={restaurantConfig.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -43,7 +41,7 @@ export default function Footer() {
               <FacebookIcon />
             </a>
             <a
-              href={siteConfig.social.instagram}
+              href={restaurantConfig.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -55,9 +53,11 @@ export default function Footer() {
         </div>
 
         {/* Colonna 2: link rapidi */}
-        <nav aria-label="Link rapidi" className="flex flex-col gap-3">
-          <h3 className="font-display text-lg font-semibold text-sunset">Esplora</h3>
-          {navLinks.map((link) => (
+        <nav aria-label={dict.footer.quickLinks} className="flex flex-col gap-3">
+          <h3 className="font-display text-lg font-semibold text-sunset">
+            {dict.footer.quickLinks}
+          </h3>
+          {quickLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -68,22 +68,32 @@ export default function Footer() {
           ))}
         </nav>
 
-        {/* Colonna 3: contatti */}
+        {/* Colonna 3: contatti + P.IVA */}
         <div className="flex flex-col gap-3 text-sm">
-          <h3 className="font-display text-lg font-semibold text-sunset">Contatti</h3>
-          <p className="text-white/75">{siteConfig.address.full}</p>
-          <a href={siteConfig.phone.href} className="w-fit text-white/75 transition-colors hover:text-coral">
-            {siteConfig.phone.display}
+          <h3 className="font-display text-lg font-semibold text-sunset">
+            {dict.footer.contacts}
+          </h3>
+          <p className="text-white/75">{restaurantConfig.address}</p>
+          <a
+            href={restaurantConfig.phone.href}
+            className="w-fit text-white/75 transition-colors hover:text-coral"
+          >
+            {restaurantConfig.phone.display}
           </a>
-          <a href={siteConfig.email.href} className="w-fit break-all text-white/75 transition-colors hover:text-coral">
-            {siteConfig.email.display}
+          <a
+            href={restaurantConfig.email.href}
+            className="w-fit break-all text-white/75 transition-colors hover:text-coral"
+          >
+            {restaurantConfig.email.display}
           </a>
-          <p className="text-white/75">{siteConfig.hours.display}</p>
+          <p className="text-white/60">{restaurantConfig.vat}</p>
         </div>
 
-        {/* Colonna 4: stato apertura + mini-mappa */}
+        {/* Colonna 4: orari sintetici + stato apertura */}
         <div className="flex flex-col gap-4">
-          <h3 className="font-display text-lg font-semibold text-sunset">Adesso</h3>
+          <h3 className="font-display text-lg font-semibold text-sunset">
+            {dict.footer.hoursTitle}
+          </h3>
           {isOpen !== null && (
             <p
               className={`inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-sm font-bold ${
@@ -93,27 +103,38 @@ export default function Footer() {
               <span
                 className={`h-2.5 w-2.5 rounded-full ${isOpen ? "animate-pulse-slow bg-aqua" : "bg-coral"}`}
               />
-              {isOpen ? "Aperto ora" : "Chiuso — riapriamo alle 7:30"}
+              {isOpen ? dict.status.open : dict.status.closed}
             </p>
           )}
-          <div className="overflow-hidden rounded-2xl border border-white/10">
-            <iframe
-              src={siteConfig.maps.embedUrl}
-              title="Mini-mappa: dove si trova Portofino Beach Bar"
-              className="h-36 w-full grayscale-[40%]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
+          <ul className="grid gap-1.5 text-sm text-white/70">
+            {dict.hours.days.map((day, i) => {
+              const slots = restaurantConfig.weekHours[i];
+              return (
+                <li key={day} className="flex justify-between gap-4">
+                  <span>{day}</span>
+                  <span className="text-right tabular-nums">
+                    {slots.length === 0
+                      ? dict.hours.closedLabel
+                      : slots.map(([from, to]) => `${from}–${to}`).join(" · ")}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-5 py-5 text-xs text-white/50 md:flex-row md:px-8">
           <p>
-            © {new Date().getFullYear()} {siteConfig.name} — {siteConfig.address.city} ({siteConfig.address.province})
+            © {new Date().getFullYear()} {dict.brand.name} — {restaurantConfig.vat}
           </p>
-          <p>{siteConfig.credits}</p>
+          <div className="flex items-center gap-4">
+            <Link href={`${base}/privacy`} className="transition-colors hover:text-coral">
+              {dict.nav.privacy}
+            </Link>
+            <p>{dict.footer.credits}</p>
+          </div>
         </div>
       </div>
     </footer>

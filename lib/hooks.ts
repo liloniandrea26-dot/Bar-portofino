@@ -50,22 +50,44 @@ export function useFinePointer(): boolean {
   return fine;
 }
 
-/** "Aperto ora" / "Chiuso" calcolato sull'orario corrente */
-export function useOpenStatus(open: { hour: number; minute: number }, close: { hour: number; minute: number }) {
+/**
+ * "Aperto ora / Chiuso" calcolato dalla tabella orari settimanale.
+ * weekHours[0] = lunedì ... weekHours[6] = domenica;
+ * ogni giorno è un elenco di fasce ["HH:MM", "HH:MM"].
+ * Ritorna null finché non è calcolato lato client (evita mismatch SSR).
+ */
+export function useOpenNow(weekHours: readonly (readonly (readonly string[])[])[]): boolean | null {
   const [isOpen, setIsOpen] = useState<boolean | null>(null);
 
   useEffect(() => {
+    const toMinutes = (hhmm: string) => {
+      const [h, m] = hhmm.split(":").map(Number);
+      return h * 60 + m;
+    };
+
     const check = () => {
       const now = new Date();
+      const dayIndex = (now.getDay() + 6) % 7; // 0 = lunedì
       const minutes = now.getHours() * 60 + now.getMinutes();
-      const openM = open.hour * 60 + open.minute;
-      const closeM = close.hour * 60 + close.minute;
-      setIsOpen(minutes >= openM && minutes < closeM);
+      const open = (weekHours[dayIndex] ?? []).some(
+        ([from, to]) => minutes >= toMinutes(from) && minutes < toMinutes(to),
+      );
+      setIsOpen(open);
     };
+
     check();
     const id = setInterval(check, 60_000);
     return () => clearInterval(id);
-  }, [open.hour, open.minute, close.hour, close.minute]);
+  }, [weekHours]);
 
   return isOpen;
+}
+
+/** Indice del giorno corrente (0 = lunedì ... 6 = domenica), null in SSR */
+export function useTodayIndex(): number | null {
+  const [today, setToday] = useState<number | null>(null);
+  useEffect(() => {
+    setToday((new Date().getDay() + 6) % 7);
+  }, []);
+  return today;
 }
