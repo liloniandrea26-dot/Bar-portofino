@@ -62,22 +62,31 @@ export default function Hero() {
 
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 px-5 pb-24 pt-36 md:px-8 lg:grid-cols-[1.4fr_1fr]">
         <div>
-          {/* Titolo con entrata lettera per lettera */}
+          {/* Titolo con entrata lettera per lettera (le parole non si spezzano a capo) */}
           <h1 className="heading-hero text-5xl text-white md:text-7xl lg:text-8xl" aria-label={TITLE}>
-            {TITLE.split("").map((char, i) => (
-              <motion.span
-                key={i}
-                aria-hidden="true"
-                initial={{ opacity: 0, y: 40, rotate: 6 }}
-                animate={{ opacity: 1, y: 0, rotate: 0 }}
-                transition={{ delay: 0.35 + i * 0.035, duration: 0.55, ease: [0.21, 0.47, 0.32, 0.98] }}
-                className={`inline-block ${char === " " ? "w-4 md:w-7" : ""} ${
-                  i >= TITLE.indexOf("Beach") ? "text-sunset" : ""
-                }`}
-              >
-                {char === " " ? " " : char}
-              </motion.span>
-            ))}
+            {TITLE.split(" ").map((word, wi, words) => {
+              const offset = words.slice(0, wi).reduce((n, w) => n + w.length, 0);
+              return (
+                <span key={wi} className="inline-block whitespace-nowrap" aria-hidden="true">
+                  {word.split("").map((char, ci) => (
+                    <motion.span
+                      key={ci}
+                      initial={{ opacity: 0, y: 40, rotate: 6 }}
+                      animate={{ opacity: 1, y: 0, rotate: 0 }}
+                      transition={{
+                        delay: 0.35 + (offset + ci) * 0.035,
+                        duration: 0.55,
+                        ease: [0.21, 0.47, 0.32, 0.98],
+                      }}
+                      className={`inline-block ${wi > 0 ? "text-sunset" : ""}`}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                  {wi < words.length - 1 && <span className="inline-block w-4 md:w-7" />}
+                </span>
+              );
+            })}
           </h1>
 
           <motion.p
