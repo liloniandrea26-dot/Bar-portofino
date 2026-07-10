@@ -213,6 +213,17 @@ export const de: Dictionary = {
     hoursTitle: "Öffnungszeiten",
     credits: "[ZU BESTÄTIGEN] Website erstellt von — Name/Agentur",
   },
+  cookie: {
+    title: "Diese Website verwendet Cookies von Drittanbietern",
+    text: "Wir verwenden nur technisch notwendige Cookies und — mit Ihrer Zustimmung — Google-Maps-Cookies, um Ihnen die Karte des Restaurants anzuzeigen. Keine Werbe- oder Profiling-Cookies.",
+    accept: "Akzeptieren",
+    reject: "Ablehnen",
+    privacyLink: "Datenschutzerklärung lesen",
+    mapBlockedTitle: "Karte deaktiviert",
+    mapBlockedText: "Die Google-Maps-Karte bleibt deaktiviert, bis Sie Cookies von Drittanbietern akzeptieren.",
+    mapBlockedButton: "Akzeptieren und Karte anzeigen",
+    mapExternal: "In Google Maps öffnen",
+  },
   common: {
     backHome: "Zurück zur Startseite",
   },

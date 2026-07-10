@@ -216,6 +216,17 @@ export const it = {
     hoursTitle: "Orari",
     credits: "[DA CONFERMARE] Sito realizzato da — nome/agenzia",
   },
+  cookie: {
+    title: "Questo sito usa cookie di terze parti",
+    text: "Usiamo solo i cookie tecnici necessari e, previo tuo consenso, quelli di Google Maps per mostrarti la mappa del ristorante. Nessun cookie di profilazione pubblicitaria.",
+    accept: "Accetta",
+    reject: "Rifiuta",
+    privacyLink: "Leggi la Privacy Policy",
+    mapBlockedTitle: "Mappa disattivata",
+    mapBlockedText: "La mappa di Google Maps è disattivata finché non accetti i cookie di terze parti.",
+    mapBlockedButton: "Accetta e mostra la mappa",
+    mapExternal: "Apri in Google Maps",
+  },
   common: {
     backHome: "Torna alla home",
   },

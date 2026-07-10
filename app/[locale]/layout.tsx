@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
+import CookieBanner from "@/components/CookieBanner";
 import { restaurantConfig } from "@/data/config";
 import { getDictionary, isLocale, locales } from "@/lib/i18n";
 
@@ -78,6 +79,7 @@ export default function RootLayout({
           <Footer dict={dict} locale={params.locale} />
         </SmoothScroll>
         <CustomCursor />
+        <CookieBanner dict={dict} locale={params.locale} />
       </body>
     </html>
   );

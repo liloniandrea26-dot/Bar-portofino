@@ -1,6 +1,7 @@
 "use client";
 
 import Reveal from "@/components/Reveal";
+import ConsentMap from "@/components/ConsentMap";
 import { restaurantConfig } from "@/data/config";
 import type { Dictionary } from "@/lib/i18n";
 
@@ -9,22 +10,9 @@ export default function LocationSection({ dict }: { dict: Dictionary }) {
   return (
     <section className="bg-cream py-24 md:py-32" aria-labelledby="dove-titolo">
       <div className="mx-auto grid max-w-7xl items-stretch gap-10 px-5 md:px-8 lg:grid-cols-[1.2fr_1fr]">
-        {/* Mappa con marker pulsante */}
+        {/* Mappa Google caricata solo dopo il consenso cookie (GDPR) */}
         <Reveal className="relative min-h-[380px] overflow-hidden rounded-3xl shadow-2xl shadow-ink/10 ring-1 ring-ink/10">
-          <iframe
-            src={restaurantConfig.maps.embedUrl}
-            title={dict.location.mapTitle}
-            className="absolute inset-0 h-full w-full"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-          <div
-            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-            aria-hidden="true"
-          >
-            <span className="absolute -inset-4 animate-ping rounded-full bg-brass/40" />
-            <span className="relative block h-5 w-5 rounded-full border-4 border-white bg-brass shadow-lg" />
-          </div>
+          <ConsentMap dict={dict} />
         </Reveal>
 
         {/* Box contatti */}

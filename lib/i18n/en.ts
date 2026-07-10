@@ -213,6 +213,17 @@ export const en: Dictionary = {
     hoursTitle: "Opening hours",
     credits: "[TO BE CONFIRMED] Website by — name/agency",
   },
+  cookie: {
+    title: "This website uses third-party cookies",
+    text: "We only use the technical cookies needed to run the site and, with your consent, Google Maps cookies to show you the restaurant's map. No advertising or profiling cookies.",
+    accept: "Accept",
+    reject: "Reject",
+    privacyLink: "Read the Privacy Policy",
+    mapBlockedTitle: "Map disabled",
+    mapBlockedText: "The Google Maps map stays disabled until you accept third-party cookies.",
+    mapBlockedButton: "Accept and show the map",
+    mapExternal: "Open in Google Maps",
+  },
   common: {
     backHome: "Back to home",
   },

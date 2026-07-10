@@ -1,8 +1,8 @@
 {
-  "name": "portofino-beach-bar",
-  "version": "1.0.0",
+  "name": "ristorante-pizzeria-sito",
+  "version": "2.0.0",
   "private": true,
-  "description": "Sito vetrina per Portofino Beach Bar — Lignano Sabbiadoro (UD)",
+  "description": "Sito vetrina trilingue (IT/EN/DE) per ristorante/pizzeria — senza e-commerce",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
