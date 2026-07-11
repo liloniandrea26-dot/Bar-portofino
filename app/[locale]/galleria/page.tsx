@@ -25,7 +25,7 @@ export default function GalleriaPage({ params }: { params: { locale: string } })
         image={siteImages.interno}
         imageAlt={dict.gallery.alts[3]}
       />
-      <GallerySection dict={dict} />
+      <GallerySection dict={dict} locale={locale} />
     </>
   );
 }

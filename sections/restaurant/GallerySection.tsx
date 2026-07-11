@@ -4,23 +4,19 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import Lightbox from "@/components/Lightbox";
-import { galleryImageSrcs, type GalleryImage } from "@/data/config";
-import type { Dictionary } from "@/lib/i18n";
+import { galleryPhotos, type GalleryImage } from "@/data/config";
+import type { Dictionary, Locale } from "@/lib/i18n";
 
 // Altezze diverse per l'effetto mosaico
-const heights = ["h-64", "h-44", "h-52", "h-64", "h-44", "h-60", "h-52", "h-44"];
+const heights = ["h-72", "h-56", "h-64", "h-72", "h-56", "h-64"];
 
-/** Galleria a mosaico con lightbox (alt localizzati dai dizionari) */
-export default function GallerySection({ dict }: { dict: Dictionary }) {
+/** Galleria a mosaico con lightbox: foto reali del ristorante */
+export default function GallerySection({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const images: GalleryImage[] = useMemo(
-    () =>
-      galleryImageSrcs.map((src, i) => ({
-        src,
-        alt: dict.gallery.alts[i] ?? dict.gallery.title,
-      })),
-    [dict],
+    () => galleryPhotos.map((photo) => ({ src: photo.src, alt: photo.alt[locale] })),
+    [locale],
   );
 
   return (
@@ -33,7 +29,7 @@ export default function GallerySection({ dict }: { dict: Dictionary }) {
           <h2 className="heading-hero text-3xl md:text-5xl">{dict.gallery.title}</h2>
         </Reveal>
 
-        <div className="mt-14 columns-2 gap-4 md:columns-4">
+        <div className="mt-14 columns-2 gap-4 md:columns-3">
           {images.map((img, i) => (
             <Reveal key={img.src} delay={i * 0.06}>
               <button
@@ -46,7 +42,7 @@ export default function GallerySection({ dict }: { dict: Dictionary }) {
                   src={img.src}
                   alt={img.alt}
                   fill
-                  sizes="(max-width: 768px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <span

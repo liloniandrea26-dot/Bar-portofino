@@ -84,20 +84,15 @@ export const restaurantConfig = {
 } as const;
 
 /* ------------------------------------------------------------------ */
-/*  IMMAGINI — placeholder Unsplash a tema ristorante                  */
-/*  ➜ Sostituisci con le foto reali del locale in /public/images       */
+/*  IMMAGINI — foto reali del ristorante (in /public/images)           */
 /* ------------------------------------------------------------------ */
 
 export const siteImages = {
-  hero: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=2000&q=80",
-  about:
-    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80",
-  forno:
-    "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1400&q=80",
-  menuPage:
-    "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1600&q=80",
-  interno:
-    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80",
+  hero: "/images/antipasto-mare.jpg",
+  about: "/images/sala.jpg",
+  forno: "/images/gran-scogliera.jpg",
+  menuPage: "/images/pizza-gourmet.jpg",
+  interno: "/images/sala.jpg",
 } as const;
 
 export interface GalleryImage {
@@ -105,14 +100,46 @@ export interface GalleryImage {
   alt: string;
 }
 
-/** Foto della galleria (gli alt localizzati arrivano dai dizionari) */
-export const galleryImageSrcs: string[] = [
-  "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+/** Foto reali della galleria, con descrizioni nelle tre lingue */
+export const galleryPhotos: { src: string; alt: { it: string; en: string; de: string } }[] = [
+  {
+    src: "/images/antipasto-mare.jpg",
+    alt: {
+      it: "Antipasto di mare: capesante e canestrelli gratinati con sauté di cozze e vongole",
+      en: "Seafood appetizer: scallops au gratin with sautéed mussels and clams",
+      de: "Fisch-Vorspeise: gratinierte Jakobsmuscheln mit sautierten Mies- und Venusmuscheln",
+    },
+  },
+  {
+    src: "/images/gran-scogliera.jpg",
+    alt: {
+      it: "Maccheroni gran scogliera serviti in padella con cozze e gamberoni",
+      en: "'Gran scogliera' maccheroni served in a pan with mussels and king prawns",
+      de: "Maccheroni 'Gran Scogliera' in der Pfanne mit Miesmuscheln und Riesengarnelen",
+    },
+  },
+  {
+    src: "/images/carbonara.jpg",
+    alt: {
+      it: "Spaghetti alla carbonara serviti al tavolo",
+      en: "Spaghetti alla carbonara served at the table",
+      de: "Spaghetti alla Carbonara am Tisch serviert",
+    },
+  },
+  {
+    src: "/images/pizza-gourmet.jpg",
+    alt: {
+      it: "Pizza gourmet con granella di pistacchi, pancetta, melanzane e burrata",
+      en: "Gourmet pizza with chopped pistachios, bacon, aubergines and burrata",
+      de: "Gourmet-Pizza mit Pistazien, Speck, Auberginen und Burrata",
+    },
+  },
+  {
+    src: "/images/sala.jpg",
+    alt: {
+      it: "La sala del ristorante Peperoncino & Co con i tavoli apparecchiati",
+      en: "The Peperoncino & Co dining room with its set tables",
+      de: "Der Gastraum von Peperoncino & Co mit gedeckten Tischen",
+    },
+  },
 ];
