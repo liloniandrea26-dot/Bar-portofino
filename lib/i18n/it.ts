@@ -33,7 +33,7 @@ export const it = {
   hero: {
     subtitle:
       "Pizza, pesce fresco e cucina italiana a due passi dal mare: tavoli all'aperto, musica dal vivo e serate che sanno d'estate. Tutti i giorni, dalle 11 alle 23.",
-    ctaMenu: "Scarica il Menu",
+    ctaMenu: "Apri il Menu",
     ctaInfo: "Informazioni",
   },
   about: {
@@ -48,7 +48,7 @@ export const it = {
     title: "Dal forno alla tavola",
     intro:
       "Scarica il menu completo in PDF oppure sfoglia le categorie qui sul sito. Nessun ordine online: il menu è solo da gustare al tavolo.",
-    download: "Scarica il Menu (PDF)",
+    download: "Apri il Menu (PDF)",
     downloadNote: "Menu Summer ufficiale in PDF — italiano, inglese e tedesco",
     viewOnline: "Sfoglia il menu sul sito",
     allergensLink: "Consulta la tabella allergeni",

@@ -32,7 +32,7 @@ export const de: Dictionary = {
   hero: {
     subtitle:
       "Pizza, frischer Fisch und italienische Küche nur wenige Schritte vom Meer: Tische im Freien, Live-Musik und echte Sommerabende. Täglich von 11 bis 23 Uhr.",
-    ctaMenu: "Speisekarte herunterladen",
+    ctaMenu: "Speisekarte öffnen",
     ctaInfo: "Informationen",
   },
   about: {
@@ -47,7 +47,7 @@ export const de: Dictionary = {
     title: "Vom Ofen auf den Tisch",
     intro:
       "Laden Sie die vollständige Speisekarte als PDF herunter oder blättern Sie hier auf der Website durch die Kategorien. Keine Online-Bestellung: Die Karte genießt man am Tisch.",
-    download: "Speisekarte herunterladen (PDF)",
+    download: "Speisekarte öffnen (PDF)",
     downloadNote: "Offizielle Sommer-Speisekarte als PDF — Italienisch, Englisch und Deutsch",
     viewOnline: "Speisekarte online ansehen",
     allergensLink: "Zur Allergen-Tabelle",

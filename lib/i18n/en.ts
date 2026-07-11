@@ -32,7 +32,7 @@ export const en: Dictionary = {
   hero: {
     subtitle:
       "Pizza, fresh seafood and Italian cuisine a stone's throw from the sea: outdoor tables, live music and true summer evenings. Every day, 11 am to 11 pm.",
-    ctaMenu: "Download the Menu",
+    ctaMenu: "Open the Menu",
     ctaInfo: "Information",
   },
   about: {
@@ -47,7 +47,7 @@ export const en: Dictionary = {
     title: "From the oven to your table",
     intro:
       "Download the full menu as a PDF or browse the categories here on the website. No online ordering: the menu is meant to be enjoyed at the table.",
-    download: "Download the Menu (PDF)",
+    download: "Open the Menu (PDF)",
     downloadNote: "Official Summer menu as PDF — Italian, English and German",
     viewOnline: "Browse the menu online",
     allergensLink: "See the allergen table",
