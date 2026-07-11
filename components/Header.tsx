@@ -44,9 +44,11 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
 
   const links = [
     { label: dict.nav.home, href: base },
-    { label: dict.nav.info, href: `${base}/informazioni` },
     { label: dict.nav.menu, href: `${base}/menu` },
+    { label: dict.nav.gallery, href: `${base}/galleria` },
     { label: dict.nav.allergens, href: `${base}/allergeni` },
+    { label: dict.nav.faq, href: `${base}/faq` },
+    { label: dict.nav.info, href: `${base}/informazioni` },
   ];
 
   return (

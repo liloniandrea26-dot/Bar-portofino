@@ -19,6 +19,8 @@ export const de: Dictionary = {
     menu: "Speisekarte",
     allergens: "Allergene",
     privacy: "Datenschutz",
+    gallery: "Galerie",
+    faq: "FAQ",
     language: "Sprache",
     openMenu: "Navigationsmenü öffnen",
     closeMenu: "Navigationsmenü schließen",
@@ -29,7 +31,7 @@ export const de: Dictionary = {
   },
   hero: {
     subtitle:
-      "Italienische Küche in Lignano Sabbiadoro: vegetarische Gerichte, Außenterrasse und Abende mit Live-Musik, bis 23 Uhr.",
+      "Pizza, frischer Fisch und italienische Küche nur wenige Schritte vom Meer: Tische im Freien, Live-Musik und echte Sommerabende. Täglich von 11 bis 23 Uhr.",
     ctaMenu: "Speisekarte herunterladen",
     ctaInfo: "Informationen",
   },
@@ -46,82 +48,21 @@ export const de: Dictionary = {
     intro:
       "Laden Sie die vollständige Speisekarte als PDF herunter oder blättern Sie hier auf der Website durch die Kategorien. Keine Online-Bestellung: Die Karte genießt man am Tisch.",
     download: "Speisekarte herunterladen (PDF)",
-    downloadNote: "Aktuelles PDF — [ZU BESTÄTIGEN] echte Speisekarte hochladen",
+    downloadNote: "Offizielle Sommer-Speisekarte als PDF — Italienisch, Englisch und Deutsch",
     viewOnline: "Speisekarte online ansehen",
     allergensLink: "Zur Allergen-Tabelle",
   },
   menuPage: {
     title: "Die Speisekarte",
     breadcrumb: "Speisekarte",
-    subtitle: "Unsere Gerichte aus Küche und Ofen. Durchschnittspreis 20-30 € pro Person. Gerichte und Preise [ZU BESTÄTIGEN].",
-    note: "Die Karte kann sich saisonal ändern. Bei Allergien und Unverträglichkeiten siehe die Seite Allergene oder fragen Sie unser Personal.",
-    priceLabel: "Preis",
-    categories: [
-      {
-        id: "antipasti",
-        label: "Vorspeisen",
-        items: [
-          { name: "[ZU BESTÄTIGEN] Vorspeise 1", desc: "Beschreibung der Zutaten.", price: "€ 0,00" },
-          { name: "[ZU BESTÄTIGEN] Vorspeise 2", desc: "Beschreibung der Zutaten.", price: "€ 0,00" },
-          { name: "[ZU BESTÄTIGEN] Vorspeise 3", desc: "Beschreibung der Zutaten.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "primi",
-        label: "Erste Gänge",
-        items: [
-          { name: "[ZU BESTÄTIGEN] Erster Gang 1", desc: "Beschreibung der Zutaten.", price: "€ 0,00" },
-          { name: "[ZU BESTÄTIGEN] Erster Gang 2", desc: "Beschreibung der Zutaten.", price: "€ 0,00" },
-          { name: "[ZU BESTÄTIGEN] Erster Gang 3", desc: "Beschreibung der Zutaten.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "pizze",
-        label: "Pizzen",
-        items: [
-          { name: "[ZU BESTÄTIGEN] Pizza 1", desc: "Beschreibung des Belags.", price: "€ 0,00" },
-          { name: "[ZU BESTÄTIGEN] Pizza 2", desc: "Beschreibung des Belags.", price: "€ 0,00" },
-          { name: "[ZU BESTÄTIGEN] Pizza 3", desc: "Beschreibung des Belags.", price: "€ 0,00" },
-          { name: "[ZU BESTÄTIGEN] Pizza 4", desc: "Beschreibung des Belags.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "secondi",
-        label: "Hauptgerichte",
-        items: [
-          { name: "[ZU BESTÄTIGEN] Hauptgericht 1", desc: "Beschreibung der Zutaten.", price: "€ 0,00" },
-          { name: "[ZU BESTÄTIGEN] Hauptgericht 2", desc: "Beschreibung der Zutaten.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "contorni",
-        label: "Beilagen",
-        items: [
-          { name: "[ZU BESTÄTIGEN] Beilage 1", desc: "Beschreibung der Beilage.", price: "€ 0,00" },
-          { name: "[ZU BESTÄTIGEN] Beilage 2", desc: "Beschreibung der Beilage.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "dolci",
-        label: "Desserts",
-        items: [
-          { name: "[ZU BESTÄTIGEN] Dessert 1", desc: "Beschreibung des Desserts.", price: "€ 0,00" },
-          { name: "[ZU BESTÄTIGEN] Dessert 2", desc: "Beschreibung des Desserts.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "bevande",
-        label: "Getränke",
-        items: [
-          { name: "[ZU BESTÄTIGEN] Getränk 1", desc: "Wasser, Softdrinks, Bier und Wein.", price: "€ 0,00" },
-          { name: "[ZU BESTÄTIGEN] Getränk 2", desc: "Wasser, Softdrinks, Bier und Wein.", price: "€ 0,00" },
-        ],
-      },
-    ],
+    subtitle:
+      "Die Sommer-Karte: Fisch- und Fleischgerichte, Pizzen aus 100% Mehl aus Friaul-Julisch Venetien. Durchschnittspreis 20-30 € pro Person.",
+    note: "Die Karte kann sich saisonal und je nach Fang des Tages ändern. Bei Allergien und Unverträglichkeiten siehe die Seite Allergene oder fragen Sie unser Personal.",
   },
   gallery: {
     eyebrow: "Galerie",
     title: "Ein Blick in unsere Küche",
+    subtitle: "Die Gerichte, der Gastraum, die Abende: das Restaurant in Bildern.",
     alts: [
       "Frisch gebackene Pizza mit Tomaten und Basilikum",
       "Der Holzofen des Restaurants",
@@ -137,8 +78,10 @@ export const de: Dictionary = {
     eyebrow: "Öffnungszeiten",
     title: "Wann wir geöffnet haben",
     closedLabel: "Ruhetag",
-    note: "[ZU BESTÄTIGEN] Unverbindliche Zeiten: bitte die echten Öffnungszeiten prüfen und aktualisieren.",
+    note: "Durchgehend geöffnet: Küche und Pizzeria immer offen.",
     days: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"],
+    everydayLabel: "Täglich",
+    deliveryLabel: "Lieferservice",
     todayLabel: "heute",
   },
   location: {
@@ -162,7 +105,7 @@ export const de: Dictionary = {
     subtitle:
       "Liste der 14 Stoffe oder Erzeugnisse, die Allergien oder Unverträglichkeiten auslösen können, gemäß EU-Verordnung 1169/2011 (Anhang II).",
     intro:
-      "Einige Gerichte unserer Karte können einen oder mehrere der folgenden Allergene enthalten. Detaillierte Informationen zu jedem Gericht erhalten Sie im Restaurant: Bitte fragen Sie unser Personal vor der Bestellung.",
+      "Lieber Gast, wenn Sie Allergien und/oder Unverträglichkeiten haben, fragen Sie uns gerne zu unseren Gerichten: Wir beraten Sie bestmöglich. Nachfolgend die 14 von der EU-Verordnung erfassten Stoffe; Informationen zu jedem Gericht erhalten Sie im Restaurant.",
     disclaimer:
       "Trotz größter Sorgfalt bei der Zubereitung können Kreuzkontaminationen nicht ausgeschlossen werden. Bei schweren Allergien informieren Sie bitte immer unser Personal.",
     items: [
@@ -180,6 +123,61 @@ export const de: Dictionary = {
       { icon: "🍷", name: "Schwefeldioxid und Sulfite", examples: "in Konzentrationen über 10 mg/kg bzw. 10 mg/l" },
       { icon: "🌼", name: "Lupinen", examples: "Lupinen und daraus gewonnene Erzeugnisse" },
       { icon: "🦪", name: "Weichtiere", examples: "Muscheln, Venusmuscheln, Tintenfisch und daraus gewonnene Erzeugnisse" },
+    ],
+  },
+  faqPage: {
+    title: "Häufige Fragen",
+    breadcrumb: "FAQ",
+    subtitle: "Alles, was Sie vor Ihrem Besuch wissen sollten: Öffnungszeiten, Reservierungen, Lieferung, Allergien und mehr.",
+    items: [
+      {
+        q: "Wie sind die Öffnungszeiten?",
+        a: "Wir haben täglich von 11 bis 23 Uhr durchgehend geöffnet: Küche und Pizzeria stehen vom Mittag bis zum Abend zur Verfügung.",
+      },
+      {
+        q: "Muss ich reservieren?",
+        a: "Eine Reservierung ist nicht erforderlich, wird aber an Wochenenden und Sommerabenden empfohlen. Rufen Sie uns an oder schreiben Sie uns auf WhatsApp: +39 0431 403099.",
+      },
+      {
+        q: "Bieten Sie Abholung und Lieferung an?",
+        a: "Ja. Abholung kann telefonisch bestellt werden; die Lieferung nach Hause läuft täglich von 12 bis 23 Uhr über den Dienst deliveryco.it.",
+      },
+      {
+        q: "Gibt es vegetarische Gerichte?",
+        a: "Ja: ein vegetarisches Gericht mit gegrilltem Dobbiaco-DOP-Käse und Grillgemüse, ein vegetarisches Sandwich, Gemüsepizzen, große Salate und viele weitere fleisch- und fischfreie Optionen.",
+      },
+      {
+        q: "Wie gehen Sie mit Allergien und Unverträglichkeiten um?",
+        a: "Unser Personal berät Sie gerne: Siehe die Seite Allergene mit den 14 Stoffen gemäß EU-Verordnung 1169/2011 und teilen Sie uns Ihre Bedürfnisse immer vor der Bestellung mit.",
+      },
+      {
+        q: "Gibt es Tische im Freien?",
+        a: "Ja, das Restaurant verfügt über eine Außenterrasse: perfekt für Mittag- und Abendessen an Sommertagen.",
+      },
+      {
+        q: "Gibt es Live-Musik?",
+        a: "Ja, wir veranstalten Abende mit Live-Musik. [ZU BESTÄTIGEN] Der aktuelle Kalender wird auf unseren Social-Media-Kanälen veröffentlicht.",
+      },
+      {
+        q: "Sind Sie familienfreundlich?",
+        a: "Natürlich! Wir haben eine eigene Kinderkarte: Pennette, Tortellini, Cordon Bleu, Nuggets und sogar die Mickey-Mouse-Pizza mit Würstchen und Pommes.",
+      },
+      {
+        q: "Wie viel kostet ein Essen im Durchschnitt?",
+        a: "Etwa 20-30 € pro Person. Das Gedeck kostet € 3,50. Pizzen ab € 6,80; Tagesgerichte variieren je nach Fang.",
+      },
+      {
+        q: "Kann ich mit Karte zahlen?",
+        a: "[ZU BESTÄTIGEN] Wir akzeptieren die gängigen Zahlungsmethoden (Bargeld und Karten).",
+      },
+      {
+        q: "Sind Haustiere erlaubt?",
+        a: "[ZU BESTÄTIGEN] Bitte fragen Sie bei der Reservierung nach.",
+      },
+      {
+        q: "Gibt es Parkplätze in der Nähe?",
+        a: "[ZU BESTÄTIGEN] Das Restaurant liegt in der Via Carinzia 23, Lignano Sabbiadoro: Beschreiben Sie hier die Parkmöglichkeiten.",
+      },
     ],
   },
   privacyPage: {

@@ -60,11 +60,6 @@ export default function About({ dict }: { dict: Dictionary }) {
               className="object-cover transition-transform duration-700 hover:scale-105"
             />
           </Reveal>
-          <div
-            aria-hidden="true"
-            className="absolute -bottom-4 left-8 h-28 w-28 rounded-full bg-sage/30 blur-sm"
-          />
-          <div aria-hidden="true" className="absolute right-10 top-4 h-16 w-16 rounded-full bg-brass/40" />
         </div>
       </div>
     </section>

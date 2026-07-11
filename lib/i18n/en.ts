@@ -19,6 +19,8 @@ export const en: Dictionary = {
     menu: "Menu",
     allergens: "Allergens",
     privacy: "Privacy Policy",
+    gallery: "Gallery",
+    faq: "FAQ",
     language: "Language",
     openMenu: "Open navigation menu",
     closeMenu: "Close navigation menu",
@@ -29,7 +31,7 @@ export const en: Dictionary = {
   },
   hero: {
     subtitle:
-      "Italian cuisine in Lignano Sabbiadoro: vegetarian dishes, outdoor seating and evenings with live music, until 11 pm.",
+      "Pizza, fresh seafood and Italian cuisine a stone's throw from the sea: outdoor tables, live music and true summer evenings. Every day, 11 am to 11 pm.",
     ctaMenu: "Download the Menu",
     ctaInfo: "Information",
   },
@@ -46,82 +48,21 @@ export const en: Dictionary = {
     intro:
       "Download the full menu as a PDF or browse the categories here on the website. No online ordering: the menu is meant to be enjoyed at the table.",
     download: "Download the Menu (PDF)",
-    downloadNote: "Updated PDF — [TO BE CONFIRMED] upload the real menu file",
+    downloadNote: "Official Summer menu as PDF — Italian, English and German",
     viewOnline: "Browse the menu online",
     allergensLink: "See the allergen table",
   },
   menuPage: {
     title: "The Menu",
     breadcrumb: "Menu",
-    subtitle: "Our dishes, from the kitchen and the oven. Average price €20-30 per person. Dishes and prices [TO BE CONFIRMED].",
-    note: "The menu may change with the seasons. For allergies and intolerances see the Allergens page or ask our staff.",
-    priceLabel: "Price",
-    categories: [
-      {
-        id: "antipasti",
-        label: "Starters",
-        items: [
-          { name: "[TO BE CONFIRMED] Starter 1", desc: "Description of the dish's ingredients.", price: "€ 0.00" },
-          { name: "[TO BE CONFIRMED] Starter 2", desc: "Description of the dish's ingredients.", price: "€ 0.00" },
-          { name: "[TO BE CONFIRMED] Starter 3", desc: "Description of the dish's ingredients.", price: "€ 0.00" },
-        ],
-      },
-      {
-        id: "primi",
-        label: "First courses",
-        items: [
-          { name: "[TO BE CONFIRMED] First course 1", desc: "Description of the dish's ingredients.", price: "€ 0.00" },
-          { name: "[TO BE CONFIRMED] First course 2", desc: "Description of the dish's ingredients.", price: "€ 0.00" },
-          { name: "[TO BE CONFIRMED] First course 3", desc: "Description of the dish's ingredients.", price: "€ 0.00" },
-        ],
-      },
-      {
-        id: "pizze",
-        label: "Pizzas",
-        items: [
-          { name: "[TO BE CONFIRMED] Pizza 1", desc: "Description of the pizza's toppings.", price: "€ 0.00" },
-          { name: "[TO BE CONFIRMED] Pizza 2", desc: "Description of the pizza's toppings.", price: "€ 0.00" },
-          { name: "[TO BE CONFIRMED] Pizza 3", desc: "Description of the pizza's toppings.", price: "€ 0.00" },
-          { name: "[TO BE CONFIRMED] Pizza 4", desc: "Description of the pizza's toppings.", price: "€ 0.00" },
-        ],
-      },
-      {
-        id: "secondi",
-        label: "Main courses",
-        items: [
-          { name: "[TO BE CONFIRMED] Main course 1", desc: "Description of the dish's ingredients.", price: "€ 0.00" },
-          { name: "[TO BE CONFIRMED] Main course 2", desc: "Description of the dish's ingredients.", price: "€ 0.00" },
-        ],
-      },
-      {
-        id: "contorni",
-        label: "Side dishes",
-        items: [
-          { name: "[TO BE CONFIRMED] Side dish 1", desc: "Description of the side dish.", price: "€ 0.00" },
-          { name: "[TO BE CONFIRMED] Side dish 2", desc: "Description of the side dish.", price: "€ 0.00" },
-        ],
-      },
-      {
-        id: "dolci",
-        label: "Desserts",
-        items: [
-          { name: "[TO BE CONFIRMED] Dessert 1", desc: "Description of the dessert.", price: "€ 0.00" },
-          { name: "[TO BE CONFIRMED] Dessert 2", desc: "Description of the dessert.", price: "€ 0.00" },
-        ],
-      },
-      {
-        id: "bevande",
-        label: "Drinks",
-        items: [
-          { name: "[TO BE CONFIRMED] Drink 1", desc: "Water, soft drinks, beers and wines.", price: "€ 0.00" },
-          { name: "[TO BE CONFIRMED] Drink 2", desc: "Water, soft drinks, beers and wines.", price: "€ 0.00" },
-        ],
-      },
-    ],
+    subtitle:
+      "The Summer menu: seafood and land cuisine, pizzas made with 100% Friuli Venezia Giulia flour. Average price € 20-30 per person.",
+    note: "The menu may change with the seasons and the catch of the day. For allergies and intolerances see the Allergens page or ask our staff.",
   },
   gallery: {
     eyebrow: "Gallery",
     title: "A look inside our kitchen",
+    subtitle: "The dishes, the dining room, the evenings: the restaurant in pictures.",
     alts: [
       "Freshly baked pizza with tomato and basil",
       "The restaurant's wood-fired oven",
@@ -137,8 +78,10 @@ export const en: Dictionary = {
     eyebrow: "Opening hours",
     title: "When we are open",
     closedLabel: "Closed",
-    note: "[TO BE CONFIRMED] Indicative hours: check and update the real opening times.",
+    note: "Open all day: kitchen and pizzeria always open.",
     days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    everydayLabel: "Every day",
+    deliveryLabel: "Home delivery",
     todayLabel: "today",
   },
   location: {
@@ -162,7 +105,7 @@ export const en: Dictionary = {
     subtitle:
       "List of the 14 substances or products causing allergies or intolerances under EU Regulation 1169/2011 (Annex II).",
     intro:
-      "Some dishes on our menu may contain one or more of the following allergens. Detailed dish-by-dish information is available in the dining room: please ask our staff before ordering.",
+      "Dear guest, if you have any food allergies or intolerances, please ask us about our dishes: we are trained to advise you in the best possible way. Below are the 14 substances identified by EU law; dish-by-dish information is available in the dining room.",
     disclaimer:
       "Despite all care taken during preparation, cross-contamination between foods cannot be excluded. If you have a severe allergy, always inform our staff.",
     items: [
@@ -180,6 +123,61 @@ export const en: Dictionary = {
       { icon: "🍷", name: "Sulphur dioxide and sulphites", examples: "at concentrations above 10 mg/kg or 10 mg/l" },
       { icon: "🌼", name: "Lupin", examples: "lupin and lupin-based products" },
       { icon: "🦪", name: "Molluscs", examples: "mussels, clams, squid and derived products" },
+    ],
+  },
+  faqPage: {
+    title: "Frequently Asked Questions",
+    breadcrumb: "FAQ",
+    subtitle: "Everything you need to know before visiting us: opening hours, reservations, delivery, allergies and more.",
+    items: [
+      {
+        q: "What are your opening hours?",
+        a: "We are open every day from 11 am to 11 pm, all day long: kitchen and pizzeria are always available, from lunch through the evening.",
+      },
+      {
+        q: "Do I need to book a table?",
+        a: "Booking is not required, but it is recommended on weekends and summer evenings. Call us or write to us on WhatsApp at +39 0431 403099.",
+      },
+      {
+        q: "Do you offer takeaway and home delivery?",
+        a: "Yes. Takeaway can be ordered by phone; home delivery runs every day from 12 pm to 11 pm through the deliveryco.it service.",
+      },
+      {
+        q: "Do you have vegetarian dishes?",
+        a: "Yes: a vegetarian dish with grilled Dobbiaco DOP cheese and grilled vegetables, a vegetarian sandwich, vegetable pizzas, salads and many other meat-free and fish-free options.",
+      },
+      {
+        q: "How do you handle allergies and intolerances?",
+        a: "Our staff is trained to advise you: see the Allergens page with the 14 substances under EU Regulation 1169/2011 and always tell us about your needs before ordering.",
+      },
+      {
+        q: "Do you have outdoor tables?",
+        a: "Yes, the restaurant has outdoor seating: perfect for summer lunches and dinners.",
+      },
+      {
+        q: "Is there live music?",
+        a: "Yes, we host evenings with live music. [TO BE CONFIRMED] The updated calendar is published on our social channels.",
+      },
+      {
+        q: "Are you family friendly?",
+        a: "Of course! We have a dedicated kids' menu: pennette, tortellini, cordon bleu, nuggets and even the Mickey Mouse pizza with Frankfurters and fries.",
+      },
+      {
+        q: "How much does a meal cost on average?",
+        a: "Roughly € 20-30 per person. The cover charge is € 3.50. Pizzas start at € 6.80 and daily dishes vary with the catch of the day.",
+      },
+      {
+        q: "Can I pay by card?",
+        a: "[TO BE CONFIRMED] We accept the main payment methods (cash and cards).",
+      },
+      {
+        q: "Are pets allowed?",
+        a: "[TO BE CONFIRMED] Please ask when booking.",
+      },
+      {
+        q: "Is there parking nearby?",
+        a: "[TO BE CONFIRMED] The restaurant is at Via Carinzia 23, Lignano Sabbiadoro: describe the parking options in the area here.",
+      },
     ],
   },
   privacyPage: {

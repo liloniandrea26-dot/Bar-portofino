@@ -62,21 +62,25 @@ export const restaurantConfig = {
   menuPdf: "/menu.pdf",
 
   /**
-   * [DA CONFERMARE] Orari di apertura per giorno (lunedì → domenica).
+   * Orari di apertura per giorno (lunedì → domenica), confermati:
+   * tutti i giorni 11:00–23:00 con orario continuato.
    * Ogni giorno è un elenco di fasce ["apertura", "chiusura"] in formato 24h.
-   * Un array vuoto = giorno di chiusura.
-   * La chiusura alle 23:00 è confermata dalla scheda Google; le altre
-   * fasce sono indicative e da verificare col ristorante.
    */
   weekHours: [
-    [["12:00", "14:30"], ["18:30", "23:00"]], // Lunedì
-    [["12:00", "14:30"], ["18:30", "23:00"]], // Martedì
-    [["12:00", "14:30"], ["18:30", "23:00"]], // Mercoledì
-    [["12:00", "14:30"], ["18:30", "23:00"]], // Giovedì
-    [["12:00", "14:30"], ["18:30", "23:00"]], // Venerdì
-    [["12:00", "14:30"], ["18:30", "23:00"]], // Sabato
-    [["12:00", "14:30"], ["18:30", "23:00"]], // Domenica
+    [["11:00", "23:00"]], // Lunedì
+    [["11:00", "23:00"]], // Martedì
+    [["11:00", "23:00"]], // Mercoledì
+    [["11:00", "23:00"]], // Giovedì
+    [["11:00", "23:00"]], // Venerdì
+    [["11:00", "23:00"]], // Sabato
+    [["11:00", "23:00"]], // Domenica
   ] as string[][][],
+
+  /** Consegna a domicilio (servizio esterno deliveryco.it, come sul menu) */
+  delivery: {
+    hours: "12:00 – 23:00",
+    url: "https://deliveryco.it",
+  },
 } as const;
 
 /* ------------------------------------------------------------------ */

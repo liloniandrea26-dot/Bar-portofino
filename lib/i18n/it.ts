@@ -20,6 +20,8 @@ export const it = {
     menu: "Menu",
     allergens: "Allergeni",
     privacy: "Privacy Policy",
+    gallery: "Galleria",
+    faq: "FAQ",
     language: "Lingua",
     openMenu: "Apri il menu di navigazione",
     closeMenu: "Chiudi il menu di navigazione",
@@ -30,7 +32,7 @@ export const it = {
   },
   hero: {
     subtitle:
-      "Cucina italiana a Lignano Sabbiadoro: piatti vegetariani, tavoli all'aperto e serate con musica dal vivo, fino alle 23.",
+      "Pizza, pesce fresco e cucina italiana a due passi dal mare: tavoli all'aperto, musica dal vivo e serate che sanno d'estate. Tutti i giorni, dalle 11 alle 23.",
     ctaMenu: "Scarica il Menu",
     ctaInfo: "Informazioni",
   },
@@ -47,7 +49,7 @@ export const it = {
     intro:
       "Scarica il menu completo in PDF oppure sfoglia le categorie qui sul sito. Nessun ordine online: il menu è solo da gustare al tavolo.",
     download: "Scarica il Menu (PDF)",
-    downloadNote: "PDF aggiornato — [DA CONFERMARE] carica il file del menu reale",
+    downloadNote: "Menu Summer ufficiale in PDF — italiano, inglese e tedesco",
     viewOnline: "Sfoglia il menu sul sito",
     allergensLink: "Consulta la tabella allergeni",
   },
@@ -55,75 +57,13 @@ export const it = {
     title: "Il Menu",
     breadcrumb: "Menu",
     subtitle:
-      "Le nostre proposte, dalla cucina e dal forno. Prezzo medio 20-30 € a persona. Piatti e prezzi [DA CONFERMARE].",
-    note: "Menu soggetto a variazioni stagionali. Per allergie e intolleranze consulta la pagina Allergeni o chiedi al personale di sala.",
-    priceLabel: "Prezzo",
-    categories: [
-      {
-        id: "antipasti",
-        label: "Antipasti",
-        items: [
-          { name: "[DA CONFERMARE] Antipasto 1", desc: "Descrizione ingredienti del piatto.", price: "€ 0,00" },
-          { name: "[DA CONFERMARE] Antipasto 2", desc: "Descrizione ingredienti del piatto.", price: "€ 0,00" },
-          { name: "[DA CONFERMARE] Antipasto 3", desc: "Descrizione ingredienti del piatto.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "primi",
-        label: "Primi",
-        items: [
-          { name: "[DA CONFERMARE] Primo 1", desc: "Descrizione ingredienti del piatto.", price: "€ 0,00" },
-          { name: "[DA CONFERMARE] Primo 2", desc: "Descrizione ingredienti del piatto.", price: "€ 0,00" },
-          { name: "[DA CONFERMARE] Primo 3", desc: "Descrizione ingredienti del piatto.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "pizze",
-        label: "Pizze",
-        items: [
-          { name: "[DA CONFERMARE] Pizza 1", desc: "Descrizione ingredienti della pizza.", price: "€ 0,00" },
-          { name: "[DA CONFERMARE] Pizza 2", desc: "Descrizione ingredienti della pizza.", price: "€ 0,00" },
-          { name: "[DA CONFERMARE] Pizza 3", desc: "Descrizione ingredienti della pizza.", price: "€ 0,00" },
-          { name: "[DA CONFERMARE] Pizza 4", desc: "Descrizione ingredienti della pizza.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "secondi",
-        label: "Secondi",
-        items: [
-          { name: "[DA CONFERMARE] Secondo 1", desc: "Descrizione ingredienti del piatto.", price: "€ 0,00" },
-          { name: "[DA CONFERMARE] Secondo 2", desc: "Descrizione ingredienti del piatto.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "contorni",
-        label: "Contorni",
-        items: [
-          { name: "[DA CONFERMARE] Contorno 1", desc: "Descrizione del contorno.", price: "€ 0,00" },
-          { name: "[DA CONFERMARE] Contorno 2", desc: "Descrizione del contorno.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "dolci",
-        label: "Dolci",
-        items: [
-          { name: "[DA CONFERMARE] Dolce 1", desc: "Descrizione del dolce.", price: "€ 0,00" },
-          { name: "[DA CONFERMARE] Dolce 2", desc: "Descrizione del dolce.", price: "€ 0,00" },
-        ],
-      },
-      {
-        id: "bevande",
-        label: "Bevande",
-        items: [
-          { name: "[DA CONFERMARE] Bevanda 1", desc: "Acque, bibite, birre e vini.", price: "€ 0,00" },
-          { name: "[DA CONFERMARE] Bevanda 2", desc: "Acque, bibite, birre e vini.", price: "€ 0,00" },
-        ],
-      },
-    ],
+      "Il menu Summer: cucina di mare e di terra, pizze con farine 100% del Friuli Venezia Giulia. Prezzo medio 20-30 € a persona.",
+    note: "Menu soggetto a variazioni stagionali e alla disponibilità del pescato. Per allergie e intolleranze consulta la pagina Allergeni o chiedi al personale di sala.",
   },
   gallery: {
     eyebrow: "La Galleria",
     title: "Uno sguardo alla nostra cucina",
+    subtitle: "I piatti, la sala, le serate: il ristorante raccontato per immagini.",
     alts: [
       "Pizza appena sfornata con pomodoro e basilico",
       "Il forno a legna del ristorante",
@@ -141,6 +81,8 @@ export const it = {
     closedLabel: "Chiuso",
     note: "[DA CONFERMARE] Orari indicativi: verifica e aggiorna le fasce reali di apertura.",
     days: ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"],
+    everydayLabel: "Tutti i giorni",
+    deliveryLabel: "Consegna a domicilio",
     todayLabel: "oggi",
   },
   location: {
@@ -164,7 +106,7 @@ export const it = {
     subtitle:
       "Elenco delle 14 sostanze o prodotti che provocano allergie o intolleranze ai sensi del Reg. UE 1169/2011 (Allegato II).",
     intro:
-      "Alcuni piatti del nostro menu possono contenere uno o più dei seguenti allergeni. Le informazioni dettagliate piatto per piatto sono disponibili in sala: chiedi al nostro personale prima di ordinare.",
+      "Caro ospite, se hai allergie e/o intolleranze alimentari chiedi pure informazioni sui nostri piatti: siamo preparati per consigliarti nel migliore dei modi. Qui sotto trovi le 14 sostanze individuate dalla normativa europea; le informazioni piatto per piatto sono disponibili in sala.",
     disclaimer:
       "Nonostante l'attenzione nella preparazione, non è possibile escludere contaminazioni crociate tra alimenti. In caso di allergia grave, segnalalo sempre al personale.",
     items: [
@@ -182,6 +124,61 @@ export const it = {
       { icon: "🍷", name: "Anidride solforosa e solfiti", examples: "in concentrazioni superiori a 10 mg/kg o 10 mg/l" },
       { icon: "🌼", name: "Lupini", examples: "lupini e prodotti a base di lupini" },
       { icon: "🦪", name: "Molluschi", examples: "cozze, vongole, calamari e prodotti derivati" },
+    ],
+  },
+  faqPage: {
+    title: "Domande Frequenti",
+    breadcrumb: "FAQ",
+    subtitle: "Tutto quello che c'è da sapere prima di venirci a trovare: orari, prenotazioni, consegne, allergie e molto altro.",
+    items: [
+      {
+        q: "Quali sono gli orari di apertura?",
+        a: "Siamo aperti tutti i giorni dalle 11:00 alle 23:00, con orario continuato: cucina e pizzeria sempre a disposizione, dal pranzo alla sera.",
+      },
+      {
+        q: "Serve prenotare?",
+        a: "La prenotazione non è obbligatoria, ma è consigliata nei weekend e nelle sere d'estate. Chiamaci o scrivici su WhatsApp al +39 0431 403099.",
+      },
+      {
+        q: "Fate asporto e consegna a domicilio?",
+        a: "Sì. L'asporto si ordina telefonicamente; la consegna a domicilio è attiva tutti i giorni dalle 12:00 alle 23:00 tramite il servizio deliveryco.it.",
+      },
+      {
+        q: "Avete piatti vegetariani?",
+        a: "Sì: piatto vegetariano con formaggio Dobbiaco DOP alla piastra e verdure grigliate, panino vegetariano, pizze con verdure, insalatone e molte altre proposte senza carne né pesce.",
+      },
+      {
+        q: "Come gestite allergie e intolleranze?",
+        a: "Il nostro personale è preparato per consigliarti nel migliore dei modi: consulta la pagina Allergeni con le 14 sostanze del Reg. UE 1169/2011 e segnala sempre le tue esigenze prima di ordinare.",
+      },
+      {
+        q: "Avete tavoli all'aperto?",
+        a: "Sì, il locale dispone di tavoli all'aperto: perfetti per pranzi e cene nelle giornate estive.",
+      },
+      {
+        q: "C'è musica dal vivo?",
+        a: "Sì, organizziamo serate con musica dal vivo. [DA CONFERMARE] Il calendario aggiornato viene pubblicato sui nostri canali social.",
+      },
+      {
+        q: "Siete adatti ai bambini?",
+        a: "Certo! Abbiamo un menu baby dedicato: pennette, tortellini, cordon bleu, nuggets e persino la pizza Mickey Mouse con würstel e patatine.",
+      },
+      {
+        q: "Quanto si spende in media?",
+        a: "Indicativamente 20-30 € a persona. Il coperto è di € 3,50. Le pizze partono da € 6,80 e i piatti del giorno variano con il pescato.",
+      },
+      {
+        q: "Si può pagare con carta?",
+        a: "[DA CONFERMARE] Accettiamo i principali metodi di pagamento (contanti, carte e bancomat).",
+      },
+      {
+        q: "Gli animali sono ammessi?",
+        a: "[DA CONFERMARE] Chiedi conferma al momento della prenotazione.",
+      },
+      {
+        q: "C'è parcheggio nelle vicinanze?",
+        a: "[DA CONFERMARE] Il ristorante è in Via Carinzia 23, a Lignano Sabbiadoro: indica qui le possibilità di parcheggio della zona.",
+      },
     ],
   },
   privacyPage: {
