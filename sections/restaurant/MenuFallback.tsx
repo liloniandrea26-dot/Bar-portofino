@@ -21,7 +21,7 @@ export default function MenuFallback({ dict, locale }: { dict: Dictionary; local
     <div className="mx-auto max-w-5xl px-5 py-20 md:px-8">
       {/* Bottone PDF sempre in evidenza */}
       <div className="mb-12 flex flex-col items-center gap-3 rounded-3xl bg-white p-8 text-center shadow-xl shadow-ink/5 ring-1 ring-ink/5">
-        <a href={restaurantConfig.menuPdf} download className="btn-primary">
+        <a href={restaurantConfig.menuPdf} target="_blank" rel="noopener noreferrer" className="btn-primary">
           📄 {dict.menuSection.download}
         </a>
         <p className="text-sm text-ink/50">{menuNotes.flour[locale]}</p>

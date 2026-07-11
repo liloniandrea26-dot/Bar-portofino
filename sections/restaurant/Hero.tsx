@@ -103,7 +103,7 @@ export default function Hero({ dict, locale }: { dict: Dictionary; locale: Local
           transition={{ delay: 1.15, duration: 0.7 }}
           className="mt-9 flex flex-wrap justify-center gap-4"
         >
-          <a href={restaurantConfig.menuPdf} download className="btn-primary">
+          <a href={restaurantConfig.menuPdf} target="_blank" rel="noopener noreferrer" className="btn-primary">
             📄 {dict.hero.ctaMenu}
           </a>
           <Link href={`/${locale}/informazioni`} className="btn-secondary text-white">
