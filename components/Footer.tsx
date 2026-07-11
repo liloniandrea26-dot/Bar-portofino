@@ -81,6 +81,14 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
             {restaurantConfig.phone.display}
           </a>
           <a
+            href={restaurantConfig.whatsapp.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit text-white/75 transition-colors hover:text-brass"
+          >
+            💬 {restaurantConfig.whatsapp.display}
+          </a>
+          <a
             href={restaurantConfig.email.href}
             className="w-fit break-all text-white/75 transition-colors hover:text-brass"
           >

@@ -4,13 +4,13 @@ import type { Dictionary } from "./index";
 export const de: Dictionary = {
   langName: "Deutsch",
   meta: {
-    title: "[ZU BESTÄTIGEN] Restaurantname — Restaurant & Pizzeria",
+    title: "Peperoncino & Co — Restaurant in Lignano Sabbiadoro",
     description:
-      "[ZU BESTÄTIGEN] Italienisches Restaurant und Pizzeria: Pizza aus dem Holzofen und saisonale Zutaten. Laden Sie die Speisekarte herunter und besuchen Sie uns.",
+      "Restaurant in Lignano Sabbiadoro: italienische Küche, vegetarische Gerichte, Außenterrasse und Live-Musik. Via Carinzia 23, geöffnet bis 23 Uhr. Speisekarte herunterladen und vorbeikommen.",
   },
   brand: {
-    name: "Restaurantname",
-    tagline: "Restaurant · Pizzeria",
+    name: "Peperoncino & Co",
+    tagline: "Restaurant · Lignano Sabbiadoro",
   },
   nav: {
     home: "Home",
@@ -29,16 +29,16 @@ export const de: Dictionary = {
   },
   hero: {
     subtitle:
-      "[ZU BESTÄTIGEN] Italienische Küche und Pizza im Herzen der Stadt: frische Zutaten, Holzofen und herzliche Gastfreundschaft.",
+      "Italienische Küche in Lignano Sabbiadoro: vegetarische Gerichte, Außenterrasse und Abende mit Live-Musik, bis 23 Uhr.",
     ctaMenu: "Speisekarte herunterladen",
     ctaInfo: "Informationen",
   },
   about: {
     eyebrow: "Über uns",
     title: "Unsere Geschichte, Gericht für Gericht",
-    p1: "[ZU BESTÄTIGEN] Kurze Vorstellung des Lokals: seit wann es besteht, wer es führt, was es besonders macht.",
-    p2: "[ZU BESTÄTIGEN] Zweiter Teil: die Philosophie in der Küche, die Auswahl der Zutaten, die Verbindung zur Region.",
-    badges: ["Holzofen", "Saisonale Zutaten", "Lang gereifter Teig"],
+    p1: "[ZU BESTÄTIGEN - Textvorschlag] Im Herzen von Lignano Sabbiadoro trifft bei Peperoncino & Co italienische Küche auf Urlaubsstimmung: Tische im Freien, mit Sorgfalt zubereitete Gerichte und Abende mit Live-Musik.",
+    p2: "[ZU BESTÄTIGEN - Textvorschlag] Unsere Karte bietet für alle etwas — mit echter Aufmerksamkeit für vegetarische Gerichte und saisonale Zutaten. Und die Zahlen sprechen für sich: 4,3 Sterne bei Google mit fast tausend Bewertungen.",
+    badges: ["Außenterrasse", "Vegetarische Gerichte", "Live-Musik", "★ 4,3 bei Google"],
   },
   menuSection: {
     eyebrow: "Die Speisekarte",
@@ -53,7 +53,7 @@ export const de: Dictionary = {
   menuPage: {
     title: "Die Speisekarte",
     breadcrumb: "Speisekarte",
-    subtitle: "Unsere Gerichte aus Küche und Ofen. Gerichte und Preise [ZU BESTÄTIGEN].",
+    subtitle: "Unsere Gerichte aus Küche und Ofen. Durchschnittspreis 20-30 € pro Person. Gerichte und Preise [ZU BESTÄTIGEN].",
     note: "Die Karte kann sich saisonal ändern. Bei Allergien und Unverträglichkeiten siehe die Seite Allergene oder fragen Sie unser Personal.",
     priceLabel: "Preis",
     categories: [

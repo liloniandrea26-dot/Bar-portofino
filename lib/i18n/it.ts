@@ -5,14 +5,13 @@
 export const it = {
   langName: "Italiano",
   meta: {
-    title: "[DA CONFERMARE] Nome Ristorante — Ristorante Pizzeria",
+    title: "Peperoncino & Co — Ristorante a Lignano Sabbiadoro",
     description:
-      "[DA CONFERMARE] Ristorante pizzeria: cucina italiana, pizze cotte nel forno a legna e ingredienti di stagione. Scarica il menu e vieni a trovarci.",
+      "Ristorante a Lignano Sabbiadoro: cucina italiana, piatti vegetariani, tavoli all'aperto e musica dal vivo. In Via Carinzia 23, aperti fino alle 23. Scarica il menu e vieni a trovarci.",
   },
   brand: {
-    /** [DA CONFERMARE] Nome del locale mostrato in logo e hero */
-    name: "Nome Ristorante",
-    tagline: "Ristorante · Pizzeria",
+    name: "Peperoncino & Co",
+    tagline: "Ristorante · Lignano Sabbiadoro",
   },
   nav: {
     home: "Home",
@@ -31,16 +30,16 @@ export const it = {
   },
   hero: {
     subtitle:
-      "[DA CONFERMARE] Cucina italiana e pizza nel cuore della città: ingredienti freschi, forno a legna e accoglienza di casa.",
+      "Cucina italiana a Lignano Sabbiadoro: piatti vegetariani, tavoli all'aperto e serate con musica dal vivo, fino alle 23.",
     ctaMenu: "Scarica il Menu",
     ctaInfo: "Informazioni",
   },
   about: {
     eyebrow: "Chi siamo",
     title: "La nostra storia, un piatto alla volta",
-    p1: "[DA CONFERMARE] Breve racconto dell'identità del locale: da quanto esiste, chi lo guida, cosa lo rende speciale. Due o tre frasi che presentano il ristorante a chi non lo conosce.",
-    p2: "[DA CONFERMARE] Seconda parte del racconto: la filosofia in cucina, la scelta delle materie prime, il legame con il territorio.",
-    badges: ["Forno a legna", "Ingredienti di stagione", "Impasto a lunga lievitazione"],
+    p1: "[DA CONFERMARE - testo proposto] Nel cuore di Lignano Sabbiadoro, Peperoncino & Co è il posto dove la cucina italiana incontra l'atmosfera della vacanza: tavoli all'aperto, piatti preparati con cura e serate che si allungano con la musica dal vivo.",
+    p2: "[DA CONFERMARE - testo proposto] La nostra carta accontenta tutti, con un'attenzione vera ai piatti vegetariani e agli ingredienti di stagione. E i numeri parlano da soli: 4,3 stelle su Google con quasi mille recensioni.",
+    badges: ["Tavoli all'aperto", "Piatti vegetariani", "Musica dal vivo", "★ 4,3 su Google"],
   },
   menuSection: {
     eyebrow: "Il Menu",
@@ -56,7 +55,7 @@ export const it = {
     title: "Il Menu",
     breadcrumb: "Menu",
     subtitle:
-      "Le nostre proposte, dalla cucina e dal forno. Prezzi e piatti [DA CONFERMARE].",
+      "Le nostre proposte, dalla cucina e dal forno. Prezzo medio 20-30 € a persona. Piatti e prezzi [DA CONFERMARE].",
     note: "Menu soggetto a variazioni stagionali. Per allergie e intolleranze consulta la pagina Allergeni o chiedi al personale di sala.",
     priceLabel: "Prezzo",
     categories: [

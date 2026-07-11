@@ -1,44 +1,52 @@
 /**
  * ============================================================
- *  CONFIGURAZIONE NON LINGUISTICA — Ristorante/Pizzeria
+ *  CONFIGURAZIONE NON LINGUISTICA — Peperoncino & Co
  * ============================================================
  *  Dati che NON dipendono dalla lingua: contatti, orari,
  *  indirizzo, link, immagini. I testi tradotti vivono invece
  *  nei dizionari in lib/i18n/ (it.ts, en.ts, de.ts).
  *
- *  ➜ Tutti i campi marcati [DA CONFERMARE] vanno sostituiti
+ *  ➜ I campi ancora marcati [DA CONFERMARE] vanno sostituiti
  *    con i dati reali del cliente.
  * ============================================================
  */
 
 export const restaurantConfig = {
-  /** [DA CONFERMARE] Nome dell'attività (uguale in tutte le lingue) */
-  name: "Ristorante Da Confermare",
+  name: "Peperoncino & Co",
 
   phone: {
-    /** [DA CONFERMARE] Numero di telefono */
-    display: "+39 000 000 0000",
-    href: "tel:+390000000000",
+    display: "+39 0431 403099",
+    href: "tel:+390431403099",
+  },
+
+  /**
+   * WhatsApp (l'attività lo espone sulla scheda Google).
+   * ➜ [DA CONFERMARE] verifica che il numero WhatsApp coincida col fisso
+   */
+  whatsapp: {
+    display: "WhatsApp",
+    href: "https://wa.me/390431403099",
   },
 
   email: {
-    /** [DA CONFERMARE] Email */
-    display: "info@ristorante-da-confermare.it",
-    href: "mailto:info@ristorante-da-confermare.it",
+    /** [DA CONFERMARE] Email del ristorante */
+    display: "info@peperoncinoeco.it",
+    href: "mailto:info@peperoncinoeco.it",
   },
 
-  /** [DA CONFERMARE] Indirizzo completo */
-  address: "Via Da Confermare 1, 00000 Città (XX)",
+  address: "Via Carinzia, 23 - 33054 Lignano Sabbiadoro (UD)",
 
   /** [DA CONFERMARE] Partita IVA (obbligatoria nel footer) */
   vat: "P.IVA 00000000000",
 
+  /** Fascia di prezzo indicativa (dalla scheda Google) */
+  priceRange: "20-30 €",
+
   maps: {
-    /** [DA CONFERMARE] Aggiorna l'indirizzo nei due link */
     directionsUrl:
-      "https://www.google.com/maps/dir/?api=1&destination=Via+Da+Confermare+1+Citta",
+      "https://www.google.com/maps/dir/?api=1&destination=Peperoncino+%26+Co+Via+Carinzia+23+33054+Lignano+Sabbiadoro+UD",
     embedUrl:
-      "https://www.google.com/maps?q=Via+Da+Confermare+1+Citta&output=embed",
+      "https://www.google.com/maps?q=Via+Carinzia+23,+33054+Lignano+Sabbiadoro+UD&output=embed",
   },
 
   social: {
@@ -57,21 +65,22 @@ export const restaurantConfig = {
    * [DA CONFERMARE] Orari di apertura per giorno (lunedì → domenica).
    * Ogni giorno è un elenco di fasce ["apertura", "chiusura"] in formato 24h.
    * Un array vuoto = giorno di chiusura.
-   * Usati sia per la tabella orari sia per il badge "Aperto/Chiuso".
+   * La chiusura alle 23:00 è confermata dalla scheda Google; le altre
+   * fasce sono indicative e da verificare col ristorante.
    */
   weekHours: [
-    [], // Lunedì — chiuso
-    [["12:00", "14:30"], ["19:00", "23:00"]], // Martedì
-    [["12:00", "14:30"], ["19:00", "23:00"]], // Mercoledì
-    [["12:00", "14:30"], ["19:00", "23:00"]], // Giovedì
-    [["12:00", "14:30"], ["19:00", "23:30"]], // Venerdì
-    [["12:00", "15:00"], ["19:00", "23:30"]], // Sabato
-    [["12:00", "15:00"], ["19:00", "23:00"]], // Domenica
+    [["12:00", "14:30"], ["18:30", "23:00"]], // Lunedì
+    [["12:00", "14:30"], ["18:30", "23:00"]], // Martedì
+    [["12:00", "14:30"], ["18:30", "23:00"]], // Mercoledì
+    [["12:00", "14:30"], ["18:30", "23:00"]], // Giovedì
+    [["12:00", "14:30"], ["18:30", "23:00"]], // Venerdì
+    [["12:00", "14:30"], ["18:30", "23:00"]], // Sabato
+    [["12:00", "14:30"], ["18:30", "23:00"]], // Domenica
   ] as string[][][],
 } as const;
 
 /* ------------------------------------------------------------------ */
-/*  IMMAGINI — placeholder Unsplash a tema ristorante/pizzeria         */
+/*  IMMAGINI — placeholder Unsplash a tema ristorante                  */
 /*  ➜ Sostituisci con le foto reali del locale in /public/images       */
 /* ------------------------------------------------------------------ */
 

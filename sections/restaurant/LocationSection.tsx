@@ -49,6 +49,21 @@ export default function LocationSection({ dict }: { dict: Dictionary }) {
               </div>
               <div>
                 <dt className="text-xs font-bold uppercase tracking-wider text-ink/50">
+                  WhatsApp
+                </dt>
+                <dd className="mt-1">
+                  <a
+                    href={restaurantConfig.whatsapp.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-smoke transition-colors hover:text-brass"
+                  >
+                    💬 {restaurantConfig.phone.display}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs font-bold uppercase tracking-wider text-ink/50">
                   {dict.location.emailLabel}
                 </dt>
                 <dd className="mt-1">

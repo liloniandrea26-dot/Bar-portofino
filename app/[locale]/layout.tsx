@@ -63,6 +63,7 @@ export default function RootLayout({
     telephone: restaurantConfig.phone.display,
     email: restaurantConfig.email.display,
     address: restaurantConfig.address,
+    priceRange: restaurantConfig.priceRange,
     vatID: restaurantConfig.vat,
   };
 

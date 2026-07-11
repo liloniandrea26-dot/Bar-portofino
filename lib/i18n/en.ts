@@ -4,13 +4,13 @@ import type { Dictionary } from "./index";
 export const en: Dictionary = {
   langName: "English",
   meta: {
-    title: "[TO BE CONFIRMED] Restaurant Name — Restaurant & Pizzeria",
+    title: "Peperoncino & Co — Restaurant in Lignano Sabbiadoro",
     description:
-      "[TO BE CONFIRMED] Italian restaurant and pizzeria: wood-fired pizzas and seasonal ingredients. Download the menu and come visit us.",
+      "Restaurant in Lignano Sabbiadoro: Italian cuisine, vegetarian dishes, outdoor seating and live music. Via Carinzia 23, open until 11 pm. Download the menu and come visit us.",
   },
   brand: {
-    name: "Restaurant Name",
-    tagline: "Restaurant · Pizzeria",
+    name: "Peperoncino & Co",
+    tagline: "Restaurant · Lignano Sabbiadoro",
   },
   nav: {
     home: "Home",
@@ -29,16 +29,16 @@ export const en: Dictionary = {
   },
   hero: {
     subtitle:
-      "[TO BE CONFIRMED] Italian cuisine and pizza in the heart of town: fresh ingredients, a wood-fired oven and a warm welcome.",
+      "Italian cuisine in Lignano Sabbiadoro: vegetarian dishes, outdoor seating and evenings with live music, until 11 pm.",
     ctaMenu: "Download the Menu",
     ctaInfo: "Information",
   },
   about: {
     eyebrow: "About us",
     title: "Our story, one dish at a time",
-    p1: "[TO BE CONFIRMED] A short story about the restaurant's identity: how long it has existed, who runs it, what makes it special.",
-    p2: "[TO BE CONFIRMED] Second part of the story: the kitchen philosophy, the choice of ingredients, the bond with the local area.",
-    badges: ["Wood-fired oven", "Seasonal ingredients", "Slow-proofed dough"],
+    p1: "[TO BE CONFIRMED - proposed copy] In the heart of Lignano Sabbiadoro, Peperoncino & Co is where Italian cuisine meets the holiday mood: outdoor tables, dishes prepared with care and evenings that stretch on with live music.",
+    p2: "[TO BE CONFIRMED - proposed copy] Our menu has something for everyone, with genuine attention to vegetarian dishes and seasonal ingredients. And the numbers speak for themselves: 4.3 stars on Google with almost a thousand reviews.",
+    badges: ["Outdoor seating", "Vegetarian dishes", "Live music", "★ 4.3 on Google"],
   },
   menuSection: {
     eyebrow: "The Menu",
@@ -53,7 +53,7 @@ export const en: Dictionary = {
   menuPage: {
     title: "The Menu",
     breadcrumb: "Menu",
-    subtitle: "Our dishes, from the kitchen and the oven. Dishes and prices [TO BE CONFIRMED].",
+    subtitle: "Our dishes, from the kitchen and the oven. Average price €20-30 per person. Dishes and prices [TO BE CONFIRMED].",
     note: "The menu may change with the seasons. For allergies and intolerances see the Allergens page or ask our staff.",
     priceLabel: "Price",
     categories: [
