@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 // ➜ [DA CONFERMARE] Sostituisci con il dominio reale
-const BASE_URL = "https://www.ristorante-da-confermare.it";
+const BASE_URL = "https://www.peperoncinoeco.it";
 
 export default function robots(): MetadataRoute.Robots {
   return {

@@ -1,6 +1,6 @@
-# 🍕 Sito Ristorante/Pizzeria — vetrina trilingue (IT · EN · DE)
+# 🍕 Peperoncino & Co — sito vetrina trilingue (IT · EN · DE)
 
-Sito web moderno per un ristorante/pizzeria italiano di fascia media-alta.
+Sito web di **Peperoncino & Co**, ristorante a Lignano Sabbiadoro (Via Carinzia 23).
 È un sito **di presentazione**: nessun e-commerce, nessun carrello, nessun ordine
 o pagamento online — solo contatti diretti (telefono click-to-call, email, mappa).
 

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
 
 // ➜ [DA CONFERMARE] Sostituisci con il dominio reale
-const BASE_URL = "https://www.ristorante-da-confermare.it";
+const BASE_URL = "https://www.peperoncinoeco.it";
 
 const pages = ["", "/menu", "/galleria", "/allergeni", "/faq", "/informazioni", "/privacy"];
 
