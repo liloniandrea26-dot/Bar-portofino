@@ -6,46 +6,46 @@ import { motion } from "framer-motion";
 
 /**
  * Hero secondario per le pagine interne: più basso della home,
- * con titolo pagina e breadcrumb (Home / Nome pagina).
+ * con titolo pagina e breadcrumb (Home / Nome pagina) localizzati.
  */
 export default function PageHero({
   title,
   breadcrumb,
+  homeLabel,
+  homeHref,
   subtitle,
   image,
   imageAlt,
 }: {
   title: string;
   breadcrumb: string;
+  homeLabel: string;
+  homeHref: string;
   subtitle?: string;
   image: string;
   imageAlt: string;
 }) {
   return (
-    <section className="relative flex min-h-[52vh] items-end overflow-hidden pb-14 pt-36" data-cursor-zone>
-      <Image
-        src={image}
-        alt={imageAlt}
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover"
+    <section className="relative flex min-h-[46vh] items-end overflow-hidden pb-14 pt-36" data-cursor-zone>
+      <Image src={image} alt={imageAlt} fill priority sizes="100vw" className="object-cover" />
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-ink/30"
+        aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-deep/90 via-deep/40 to-deep/30" aria-hidden="true" />
 
       <div className="relative mx-auto w-full max-w-7xl px-5 md:px-8">
         <motion.nav
-          aria-label="Percorso di navigazione"
+          aria-label="Breadcrumb"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mb-4 flex items-center gap-2 text-sm font-medium text-white/70"
         >
-          <Link href="/" className="transition-colors hover:text-sunset">
-            Home
+          <Link href={homeHref} className="transition-colors hover:text-champagne">
+            {homeLabel}
           </Link>
           <span aria-hidden="true">/</span>
-          <span className="text-sunset">{breadcrumb}</span>
+          <span className="text-champagne">{breadcrumb}</span>
         </motion.nav>
 
         <motion.h1

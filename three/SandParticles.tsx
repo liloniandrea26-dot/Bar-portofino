@@ -51,7 +51,7 @@ export default function SandParticles({ count = 900 }: { count?: number }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.045}
-        color="#EAD9BE"
+        color="#D8C6A2"
         transparent
         opacity={0.75}
         sizeAttenuation
