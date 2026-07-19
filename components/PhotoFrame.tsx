@@ -2,10 +2,15 @@
 
 import { useState } from "react";
 
+function isVideo(src: string): boolean {
+  return /\.(mp4|webm|mov|m4v)$/i.test(src.split("?")[0]);
+}
+
 /**
- * Mostra una foto da /public/photos. Se il file non esiste ancora,
+ * Mostra una foto O UN VIDEO da /public/photos. Se il file non esiste ancora,
  * mostra un segnaposto elegante con il path atteso, così è chiaro
- * quale foto va aggiunta — il gioco non si rompe mai.
+ * quale file va aggiunto — il gioco non si rompe mai.
+ * Formati video supportati: .mp4, .webm, .mov
  */
 export default function PhotoFrame({
   src,
@@ -27,7 +32,7 @@ export default function PhotoFrame({
       >
         <span className="text-4xl">{placeholderEmoji}</span>
         <span className="font-game text-sm font-semibold text-vino/70">
-          Qui ci andrà una foto ✨
+          Qui ci andrà {src && isVideo(src) ? "un video" : "una foto"} ✨
         </span>
         {src && (
           <code className="rounded-md bg-white/60 px-2 py-0.5 text-[10px] text-vino/60">
@@ -35,6 +40,21 @@ export default function PhotoFrame({
           </code>
         )}
       </div>
+    );
+  }
+
+  if (isVideo(src)) {
+    return (
+      <video
+        src={src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        controls
+        onError={() => setFailed(true)}
+        className={`rounded-2xl object-cover shadow-lg ring-4 ring-white ${className}`}
+      />
     );
   }
 

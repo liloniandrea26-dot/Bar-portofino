@@ -15,7 +15,7 @@
  *   - `title`: il titolo mostrato nell'header del livello
  *   - i dati specifici del minigioco
  *   - `memory`: il testo del ricordo che appare quando il livello è completato
- *   - `memoryPhoto` (opzionale): foto mostrata insieme al ricordo
+ *   - `memoryPhoto` (opzionale): foto O VIDEO (.mp4/.webm) mostrato col ricordo
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
