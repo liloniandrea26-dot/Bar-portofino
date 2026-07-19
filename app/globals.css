@@ -2,138 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-ink: #201d19;
-  --color-brass: #9a6b3f;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
-  @apply bg-cream text-ink font-sans antialiased;
-  overflow-x: hidden;
+  height: 100%;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-::selection {
-  @apply bg-brass/25 text-ink;
-}
-
-/* Scrollbar leggera in tema */
+/* Scrollbar discreta a tema */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f5f2ec;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9af8b;
-  border-radius: 9999px;
+  background: #fb718566;
+  border-radius: 8px;
 }
 
-/* ------------------------------------------------------------------ */
-/*  Texture "grana di lino" — sfondo discreto per le sezioni chiare    */
-/* ------------------------------------------------------------------ */
-.grain-texture {
-  background-color: #f5f2ec;
-  background-image: radial-gradient(rgba(32, 29, 25, 0.045) 1px, transparent 1px),
-    radial-gradient(rgba(154, 107, 63, 0.035) 1px, transparent 1px);
-  background-size: 22px 22px, 34px 34px;
-  background-position: 0 0, 11px 11px;
-}
-
-.grain-texture-dark {
-  background-color: #201d19;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    radial-gradient(rgba(201, 175, 139, 0.06) 1px, transparent 1px);
-  background-size: 22px 22px, 34px 34px;
-  background-position: 0 0, 11px 11px;
-}
-
-/* ------------------------------------------------------------------ */
-/*  Bottoni con effetto "liquido" al passaggio del mouse               */
-/* ------------------------------------------------------------------ */
-.btn-liquid {
-  @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 font-semibold transition-all duration-300;
-}
-
-.btn-liquid::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
-  transform: translateX(-100%) skewX(-15deg);
-  transition: transform 0.6s ease;
-}
-
-.btn-liquid:hover::before {
-  transform: translateX(100%) skewX(-15deg);
-}
-
-.btn-liquid::after {
-  content: "";
-  position: absolute;
-  bottom: -60%;
-  left: -10%;
-  right: -10%;
-  height: 70%;
-  border-radius: 45% 55% 0 0;
-  background: rgba(255, 255, 255, 0.12);
-  transform: translateY(100%);
-  transition: transform 0.45s cubic-bezier(0.33, 1, 0.68, 1);
-  pointer-events: none;
-}
-
-.btn-liquid:hover::after {
-  transform: translateY(0);
-}
-
-.btn-primary {
-  @apply btn-liquid bg-brass text-white shadow-lg shadow-brass/25 hover:shadow-xl hover:shadow-brass/35 hover:-translate-y-0.5;
-}
-
-.btn-secondary {
-  @apply btn-liquid border-2 border-current bg-transparent hover:-translate-y-0.5;
-}
-
-/* Stato di focus visibile e coerente su tutti gli elementi interattivi */
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid #9a6b3f;
-  outline-offset: 3px;
-}
-
-/* ------------------------------------------------------------------ */
-/*  Cursor personalizzato (solo desktop, nelle sezioni hero)           */
-/* ------------------------------------------------------------------ */
-@media (pointer: fine) {
-  [data-cursor-zone] {
-    cursor: none;
+@layer components {
+  /* Bottone primario del gioco */
+  .btn-game {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-rosso px-8 py-3.5 font-game text-lg font-bold text-white shadow-lg shadow-rosso/30 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-rosso/40 active:scale-95 disabled:opacity-40 disabled:hover:scale-100;
   }
-  [data-cursor-zone] a,
-  [data-cursor-zone] button {
-    cursor: none;
+  .btn-soft {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white/80 px-6 py-2.5 font-game font-semibold text-vino shadow-md ring-1 ring-rosa/30 transition-all duration-200 hover:scale-105 hover:bg-white active:scale-95;
+  }
+  /* Card standard dei minigiochi */
+  .game-card {
+    @apply rounded-3xl bg-white/85 p-5 shadow-xl shadow-vino/10 ring-1 ring-rosa/20 backdrop-blur-sm sm:p-7;
+  }
+  .input-game {
+    @apply w-full rounded-2xl border-2 border-rosa/40 bg-white px-4 py-3 text-center font-game text-lg text-vino outline-none transition-colors placeholder:text-rosa/40 focus:border-rosso;
   }
 }
 
-/* ------------------------------------------------------------------ */
-/*  Tipografia display                                                 */
-/* ------------------------------------------------------------------ */
-.heading-hero {
-  @apply font-display font-medium leading-[1.08] tracking-tight;
+/* Testo con gradiente oro/rosa per i titoli speciali */
+.text-shimmer {
+  background: linear-gradient(90deg, #d9a441, #fb7185, #e11d48, #d9a441);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+@keyframes shimmer {
+  to {
+    background-position: 300% 0;
+  }
 }
 
-/* Riduce le animazioni per chi lo preferisce */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+/* Pattern cielo stellato per la mappa */
+.sky-bg {
+  background:
+    radial-gradient(ellipse at 20% 0%, #4a2f5c 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 100%, #52273f 0%, transparent 55%),
+    linear-gradient(180deg, #2b1b33 0%, #3e2440 100%);
+}
+
+/* Carta "lettera" del finale */
+.letter-paper {
+  background:
+    radial-gradient(ellipse at top left, #fffdf7 0%, #fdf3e3 100%);
+  box-shadow:
+    0 1px 0 rgba(127, 29, 58, 0.06),
+    0 20px 60px rgba(60, 20, 40, 0.25);
+}
+
+/* Cursore "penna" lampeggiante del typewriter */
+.typewriter-caret::after {
+  content: "❤";
+  margin-left: 2px;
+  color: #e11d48;
+  animation: caret-blink 1s step-end infinite;
+}
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
   }
 }

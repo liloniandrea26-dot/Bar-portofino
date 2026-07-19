@@ -4,37 +4,54 @@ const config: Config = {
   content: [
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
-    "./sections/**/*.{ts,tsx}",
-    "./three/**/*.{ts,tsx}",
+    "./lib/**/*.{ts,tsx}",
+    "./content.config.ts",
   ],
   theme: {
     extend: {
       colors: {
-        // Palette "Bianco & Ottone" — chiara, neutra, elegante
-        ink: "#201D19", // quasi-nero caldo: testi e sezioni scure
-        smoke: "#6B6459", // grigio caldo: testi secondari
-        sage: "#7D8C72", // verde spento: stato "Aperto"
-        stone: "#E7E1D6", // neutro medio: bordi, superfici
-        linen: "#F5F2EC", // lino chiaro: sfondi alternati
-        brass: "#9A6B3F", // ottone brunito: unico accento
-        champagne: "#C9AF8B", // champagne: accento soft su fondi scuri
-        cream: "#FDFCF9", // bianco caldo: fondo principale
+        // Palette calda "Mini Pitbull Quest"
+        cream: "#FFF7EE", // sfondo principale caldo
+        blush: "#FFE0E6", // rosa chiarissimo, superfici
+        rosa: "#FB7185", // rosa acceso, accenti giocosi
+        rosso: "#E11D48", // rosso amore, azioni primarie
+        vino: "#7F1D3A", // rosso scuro, testi importanti
+        oro: "#D9A441", // oro caldo, stelle e premi
+        notte: "#2B1B33", // viola notte, mappa/cielo
+        nottechiaro: "#3E2A4A", // viola notte più chiaro
+        inchiostro: "#3B2430", // testi su fondo chiaro
       },
       fontFamily: {
-        display: ["var(--font-fraunces)", "Georgia", "serif"],
-        sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
-      },
-      borderRadius: {
-        "4xl": "2.5rem",
+        romantic: ["'Playfair Display'", "Georgia", "serif"],
+        game: ["'Baloo 2'", "'Comic Sans MS'", "system-ui", "sans-serif"],
+        body: ["'Quicksand'", "system-ui", "sans-serif"],
       },
       animation: {
-        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        float: "float 6s ease-in-out infinite",
+        "float-slow": "float 6s ease-in-out infinite",
+        twinkle: "twinkle 2.4s ease-in-out infinite",
+        heartbeat: "heartbeat 1.4s ease-in-out infinite",
+        wiggle: "wiggle 0.4s ease-in-out",
       },
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-12px)" },
+        },
+        twinkle: {
+          "0%, 100%": { opacity: "0.25", transform: "scale(0.9)" },
+          "50%": { opacity: "1", transform: "scale(1.1)" },
+        },
+        heartbeat: {
+          "0%, 100%": { transform: "scale(1)" },
+          "14%": { transform: "scale(1.12)" },
+          "28%": { transform: "scale(1)" },
+          "42%": { transform: "scale(1.12)" },
+          "70%": { transform: "scale(1)" },
+        },
+        wiggle: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "25%": { transform: "translateX(-8px)" },
+          "75%": { transform: "translateX(8px)" },
         },
       },
     },

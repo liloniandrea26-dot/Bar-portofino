@@ -1,99 +1,83 @@
-# 🍕 Peperoncino & Co — sito vetrina trilingue (IT · EN · DE)
+# 🐶💛 Mini Pitbull Quest
 
-Sito web di **Peperoncino & Co**, ristorante a Lignano Sabbiadoro (Via Carinzia 23).
-È un sito **di presentazione**: nessun e-commerce, nessun carrello, nessun ordine
-o pagamento online — solo contatti diretti (telefono click-to-call, email, mappa).
+Un'avventura a livelli fatta a mano per il compleanno di **Caterina** ("Mini Pitbull"):
+**21 minigiochi** — uno per ogni ricordo della vostra storia — che sbloccano il
+**livello 22 finale**, dove una busta animata rivela una lettera scritta da te,
+con effetto macchina da scrivere.
 
-> ⚠️ **I contenuti sono placeholder**: tutti i campi segnati `[DA CONFERMARE]`
-> (nome, contatti, orari, menu, testi) vanno sostituiti con i dati reali del
-> cliente. L'elenco completo è in fondo a questo README.
-
-## Stack
-
-- **Next.js 14** (App Router) + React + TypeScript
-- **Tailwind CSS** — palette "Bianco & Ottone": chiara, neutra, elegante
-- **Framer Motion** — micro-animazioni, reveal allo scroll, transizioni pagina
-- **React Three Fiber + drei** — particelle nell'hero e pizza 3D low-poly (fallback statico su mobile)
-- **Lenis** — smooth scroll
-- **i18n custom** — dizionari tipizzati in `lib/i18n/` con middleware di redirect lingua
-
-## Avvio in locale
+## 🚀 Avvio
 
 ```bash
 npm install
-npm run dev       # http://localhost:3000 → redirect su /it, /en o /de
+npm run dev
 ```
 
-Build di produzione: `npm run build && npm start`.
+Poi apri [http://localhost:3000](http://localhost:3000) (funziona benissimo anche da telefono).
 
-## Struttura
+## ✍️ Personalizzare i contenuti — `content.config.ts`
 
-```
-app/[locale]/         Pagine per lingua (it/en/de)
-  page.tsx            Home: hero + chi siamo + menu + galleria + orari + mappa
-  informazioni/       Chi siamo, orari, contatti, mappa
-  menu/               Bottone PDF + menu testuale a 7 categorie
-  allergeni/          14 allergeni Reg. UE 1169/2011 (testo normativo, tradotto)
-  privacy/            Privacy Policy con struttura GDPR
-  layout.tsx          Header/Footer, font, SEO, Schema.org, banner cookie
-app/robots.ts         robots.txt
-app/sitemap.ts        sitemap.xml (tutte le pagine × 3 lingue)
-middleware.ts         Redirect / → /it|/en|/de dalla lingua del browser
-lib/i18n/             ⭐ Dizionari IT/EN/DE: TUTTI i testi del sito
-data/config.ts        ⭐ Dati non linguistici: contatti, orari, P.IVA, link, foto
-components/           Header, Footer, CookieBanner, ConsentMap, Lightbox, ...
-sections/restaurant/  Sezioni di pagina
-three/                Scene 3D (particelle, pizza) con gate performance
-public/menu.pdf       Segnaposto: sostituire col PDF reale del menu
-public/images/        Foto reali del locale (da caricare)
-```
+**Tutto** quello che c'è da personalizzare sta in un unico file: **`content.config.ts`**
+nella root del progetto. Cerca i `[PLACEHOLDER]` e sostituiscili:
 
-## GDPR / Cookie
+1. **Nomi e date** — il tuo nome, l'iniziale sulla busta, le date importanti.
+2. **Intro** — il testo di benvenuto sulla schermata iniziale.
+3. **Livelli 1–21** — per ogni livello: titolo, contenuti del minigioco
+   (domande, parole, indizi, frasi…) e il **ricordo** mostrato a fine livello.
+4. **La lettera finale** — `finale.letter`: scrivi qui la tua lettera
+   (paragrafi separati da riga vuota), più chiusura, firma e data.
 
-- **Banner cookie trilingue** al primo accesso (accetta/rifiuta, scelta salvata in
-  `localStorage`).
-- La **mappa Google** viene caricata **solo dopo il consenso**: prima mostra un
-  segnaposto con link esterno a Google Maps (nessun cookie di terze parti senza consenso).
-- Pagina **Privacy Policy** con struttura GDPR da completare con i dati del titolare.
+### ⚠️ Note su alcuni livelli
 
-## ✏️ Dove sostituire i contenuti `[DA CONFERMARE]`
+- **Livello 4 (cruciverba)**: le parole devono incastrarsi nella griglia.
+  Il modo più semplice è sostituire le parole di esempio con parole vostre
+  della **stessa lunghezza** (PUB→3 lettere, PIZZA→5, BACIO→5, MARE→4, AMORE→5).
+- **Livello 5 e 11 (impiccato/anagrammi)**: solo lettere, senza spazi.
+- **Livello 9 e 14 (canzone/emoji)**: in `answers` metti tutte le varianti
+  accettate della risposta (maiuscole e accenti non contano).
+- **Livello 20 (data segreta)**: i tre calcoli devono dare giorno, mese e anno
+  della vostra data.
 
-### 1. `data/config.ts` — dati dell'attività
-| Campo | Cosa inserire |
+### 📷 Foto
+
+Mettile in `public/photos/` — vedi `public/photos/README.md` per i nomi
+suggeriti. Se una foto manca, appare un segnaposto elegante: niente si rompe.
+
+### 🧪 Testare tutto velocemente
+
+In fondo a `content.config.ts` c'è `dev.unlockAll`: mettilo a `true` per
+sbloccare tutti i livelli e provarli in qualsiasi ordine.
+**Rimettilo a `false` prima di regalarlo!**
+
+## 🎮 Com'è fatto
+
+- **Next.js 14** (App Router) + **TypeScript** + **Tailwind CSS**
+- **Framer Motion** per animazioni e transizioni
+- **Zustand + localStorage** per la progressione: se chiude il browser,
+  riprende da dove era rimasta
+- Ogni livello è un componente in `components/levels/LevelXX.tsx`,
+  orchestrato da `components/GameEngine.tsx`
+
+| Livello | Minigioco |
 |---|---|
-| `name` | Nome dell'attività |
-| `phone` | Telefono reale (display + href `tel:`) |
-| `email` | Email reale |
-| `address` | Indirizzo completo |
-| `vat` | Partita IVA (obbligatoria nel footer) |
-| `maps.directionsUrl` / `maps.embedUrl` | Link Google Maps con l'indirizzo reale |
-| `social.facebook` / `social.instagram` | Profili social reali |
-| `weekHours` | Orari reali per giorno (fasce; `[]` = chiuso) |
-
-### 2. `lib/i18n/it.ts`, `en.ts`, `de.ts` — testi (in tutte e 3 le lingue)
-- `brand.name` — nome mostrato in logo e hero
-- `meta.title` / `meta.description` — SEO
-- `hero.subtitle` — sottotitolo dell'hero
-- `about.p1` / `about.p2` — racconto "chi siamo"
-- `menuPage.categories[...]` — nomi, descrizioni e prezzi dei piatti (7 categorie)
-- `hours.note` — nota orari
-- `privacyPage` — titolare del trattamento, servizi terzi, data aggiornamento
-- `footer.credits` — chi ha realizzato il sito
-
-### 3. File
-- `public/menu.pdf` — sostituire col PDF reale del menu
-- `public/images/` — caricare le foto reali e aggiornare gli URL in `data/config.ts`
-  (ora placeholder Unsplash)
-
-### 4. Dominio
-- `app/[locale]/layout.tsx` → `metadataBase`
-- `app/robots.ts` e `app/sitemap.ts` → `BASE_URL`
-
-## Note performance/accessibilità
-
-- Scene 3D disattivate automaticamente su mobile, dispositivi lenti e
-  `prefers-reduced-motion` (sostituite da fallback statici)
-- Immagini con `next/image` e lazy loading; 3D montato solo in viewport
-- HTML semantico, focus ring visibile, lightbox navigabile da tastiera,
-  tabella orari con markup `<table>` corretto
-- Dati strutturati Schema.org `Restaurant` + `hreflang` per le 3 lingue
+| 1 | Quiz "Quanto mi conosci?" |
+| 2 | Memory match |
+| 3 | Puzzle jigsaw di una foto |
+| 4 | Cruciverba personalizzato |
+| 5 | Impiccato (versione dolce: salva i cuoricini) |
+| 6 | Timeline da riordinare (drag & drop) |
+| 7 | Scratch card digitale |
+| 8 | Trova le 5 differenze |
+| 9 | Indovina la canzone |
+| 10 | Labirinto |
+| 11 | Anagrammi |
+| 12 | Ruota della fortuna con trivia |
+| 13 | Unisci i puntini (a forma di cuore) |
+| 14 | Emoji riddle |
+| 15 | Whack-a-mole romantico |
+| 16 | Slider prima/dopo |
+| 17 | Typing challenge a tempo |
+| 18 | Mappa cliccabile dei luoghi del cuore |
+| 19 | Vero o falso |
+| 20 | Rompicapo matematico → data segreta |
+| 21 | Costruisci la frase |
+| 22 | 💌 La lettera finale |
