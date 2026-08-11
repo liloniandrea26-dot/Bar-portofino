@@ -1,16 +1,16 @@
 import type { Dictionary } from "./index";
 
-/** DEUTSCHES Wörterbuch. [ZU BESTÄTIGEN]-Felder warten auf die echten Kundendaten. */
+/** DEUTSCHES Wörterbuch. [AUSZUFÜLLEN]-Felder warten auf die echten Kundendaten. */
 export const de: Dictionary = {
   langName: "Deutsch",
   meta: {
-    title: "Peperoncino & Co — Restaurant in Lignano Sabbiadoro",
+    title: "[AUSZUFÜLLEN] Pizzeria-Name — Pizzeria in Stadt",
     description:
-      "Restaurant in Lignano Sabbiadoro: italienische Küche, vegetarische Gerichte, Außenterrasse und Live-Musik. Via Carinzia 23, geöffnet bis 23 Uhr. Speisekarte herunterladen und vorbeikommen.",
+      "[AUSZUFÜLLEN] SEO-Beschreibung der Pizzeria: Spezialitäten, Lage, Öffnungszeiten. Max. ~155 Zeichen.",
   },
   brand: {
-    name: "Peperoncino & Co",
-    tagline: "Restaurant · Lignano Sabbiadoro",
+    name: "Nome Pizzeria",
+    tagline: "Pizzeria",
   },
   nav: {
     home: "Home",
@@ -31,16 +31,16 @@ export const de: Dictionary = {
   },
   hero: {
     subtitle:
-      "Pizza, frischer Fisch und italienische Küche nur wenige Schritte vom Meer: Tische im Freien, Live-Musik und echte Sommerabende. Täglich von 11 bis 23 Uhr.",
+      "[AUSZUFÜLLEN] Ein einprägsamer Satz, der die Pizzeria vorstellt: Spezialitäten, Atmosphäre, das Besondere.",
     ctaMenu: "Speisekarte öffnen",
     ctaInfo: "Informationen",
   },
   about: {
     eyebrow: "Über uns",
     title: "Unsere Geschichte, Gericht für Gericht",
-    p1: "[ZU BESTÄTIGEN - Textvorschlag] Im Herzen von Lignano Sabbiadoro trifft bei Peperoncino & Co italienische Küche auf Urlaubsstimmung: Tische im Freien, mit Sorgfalt zubereitete Gerichte und Abende mit Live-Musik.",
-    p2: "[ZU BESTÄTIGEN - Textvorschlag] Unsere Karte bietet für alle etwas — mit echter Aufmerksamkeit für vegetarische Gerichte und saisonale Zutaten. Und die Zahlen sprechen für sich: 4,3 Sterne bei Google mit fast tausend Bewertungen.",
-    badges: ["Außenterrasse", "Vegetarische Gerichte", "Live-Musik", "★ 4,3 bei Google"],
+    p1: "[AUSZUFÜLLEN] Erster Teil: seit wann es die Pizzeria gibt, wer sie führt, was sie besonders macht.",
+    p2: "[AUSZUFÜLLEN] Zweiter Teil: die Philosophie in der Küche, die Zutaten, die Verbindung zur Region.",
+    badges: ["[AUSZUFÜLLEN] Stärke 1", "[AUSZUFÜLLEN] Stärke 2", "[AUSZUFÜLLEN] Stärke 3"],
   },
   menuSection: {
     eyebrow: "Die Speisekarte",
@@ -48,7 +48,7 @@ export const de: Dictionary = {
     intro:
       "Laden Sie die vollständige Speisekarte als PDF herunter oder blättern Sie hier auf der Website durch die Kategorien. Keine Online-Bestellung: Die Karte genießt man am Tisch.",
     download: "Speisekarte öffnen (PDF)",
-    downloadNote: "Offizielle Sommer-Speisekarte als PDF — Italienisch, Englisch und Deutsch",
+    downloadNote: "[AUSZUFÜLLEN] Echte Speisekarte als PDF in public/menu.pdf hochladen",
     viewOnline: "Speisekarte online ansehen",
     allergensLink: "Zur Allergen-Tabelle",
   },
@@ -56,29 +56,20 @@ export const de: Dictionary = {
     title: "Die Speisekarte",
     breadcrumb: "Speisekarte",
     subtitle:
-      "Die Sommer-Karte: Fisch- und Fleischgerichte, Pizzen aus 100% Mehl aus Friaul-Julisch Venetien. Durchschnittspreis 20-30 € pro Person.",
-    note: "Die Karte kann sich saisonal und je nach Fang des Tages ändern. Bei Allergien und Unverträglichkeiten siehe die Seite Allergene oder fragen Sie unser Personal.",
+      "[AUSZUFÜLLEN] Untertitel der Menü-Seite: Spezialitäten und Preisspanne.",
+    note: "Die Karte kann sich saisonal ändern. Bei Allergien und Unverträglichkeiten siehe die Seite Allergene oder fragen Sie unser Personal.",
   },
   gallery: {
     eyebrow: "Galerie",
     title: "Ein Blick in unsere Küche",
     subtitle: "Die Gerichte, der Gastraum, die Abende: das Restaurant in Bildern.",
-    alts: [
-      "Fisch-Vorspeise: gratinierte Jakobsmuscheln, Mies- und Venusmuscheln",
-      "Maccheroni 'Gran Scogliera' in der Pfanne mit Muscheln und Riesengarnelen",
-      "Spaghetti alla Carbonara am Tisch serviert",
-      "Der Gastraum des Restaurants mit gedeckten Tischen",
-      "Gourmet-Pizza mit Pistazien, Speck und Burrata",
-      "Der Gastraum von Peperoncino & Co",
-      "Frisch gebackene Gourmet-Pizza",
-      "Die Fischgerichte des Restaurants",
-    ],
+    alts: Array(8).fill("Foto des Lokals — zu ersetzen") as string[],
   },
   hours: {
     eyebrow: "Öffnungszeiten",
     title: "Wann wir geöffnet haben",
     closedLabel: "Ruhetag",
-    note: "Durchgehend geöffnet: Küche und Pizzeria immer offen.",
+    note: "[AUSZUFÜLLEN] Hinweis zu den Öffnungszeiten (z. B. durchgehend geöffnet, Saisonpausen).",
     days: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"],
     everydayLabel: "Täglich",
     deliveryLabel: "Lieferservice",
@@ -105,7 +96,7 @@ export const de: Dictionary = {
     subtitle:
       "Liste der 14 Stoffe oder Erzeugnisse, die Allergien oder Unverträglichkeiten auslösen können, gemäß EU-Verordnung 1169/2011 (Anhang II).",
     intro:
-      "Lieber Gast, wenn Sie Allergien und/oder Unverträglichkeiten haben, fragen Sie uns gerne zu unseren Gerichten: Wir beraten Sie bestmöglich. Nachfolgend die 14 von der EU-Verordnung erfassten Stoffe; Informationen zu jedem Gericht erhalten Sie im Restaurant.",
+      "Einige Gerichte unserer Karte können einen oder mehrere der folgenden Allergene enthalten. Detaillierte Informationen zu jedem Gericht erhalten Sie im Restaurant: Bitte fragen Sie unser Personal vor der Bestellung.",
     disclaimer:
       "Trotz größter Sorgfalt bei der Zubereitung können Kreuzkontaminationen nicht ausgeschlossen werden. Bei schweren Allergien informieren Sie bitte immer unser Personal.",
     items: [
@@ -132,51 +123,51 @@ export const de: Dictionary = {
     items: [
       {
         q: "Wie sind die Öffnungszeiten?",
-        a: "Wir haben täglich von 11 bis 23 Uhr durchgehend geöffnet: Küche und Pizzeria stehen vom Mittag bis zum Abend zur Verfügung.",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
       {
         q: "Muss ich reservieren?",
-        a: "Eine Reservierung ist nicht erforderlich, wird aber an Wochenenden und Sommerabenden empfohlen. Rufen Sie uns an oder schreiben Sie uns auf WhatsApp: +39 0431 403099.",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
       {
         q: "Bieten Sie Abholung und Lieferung an?",
-        a: "Ja. Abholung kann telefonisch bestellt werden; die Lieferung nach Hause läuft täglich von 12 bis 23 Uhr über den Dienst deliveryco.it.",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
       {
         q: "Gibt es vegetarische Gerichte?",
-        a: "Ja: ein vegetarisches Gericht mit gegrilltem Dobbiaco-DOP-Käse und Grillgemüse, ein vegetarisches Sandwich, Gemüsepizzen, große Salate und viele weitere fleisch- und fischfreie Optionen.",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
       {
         q: "Wie gehen Sie mit Allergien und Unverträglichkeiten um?",
-        a: "Unser Personal berät Sie gerne: Siehe die Seite Allergene mit den 14 Stoffen gemäß EU-Verordnung 1169/2011 und teilen Sie uns Ihre Bedürfnisse immer vor der Bestellung mit.",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
       {
         q: "Gibt es Tische im Freien?",
-        a: "Ja, das Restaurant verfügt über eine Außenterrasse: perfekt für Mittag- und Abendessen an Sommertagen.",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
       {
         q: "Gibt es Live-Musik?",
-        a: "Ja, wir veranstalten Abende mit Live-Musik. [ZU BESTÄTIGEN] Der aktuelle Kalender wird auf unseren Social-Media-Kanälen veröffentlicht.",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
       {
         q: "Sind Sie familienfreundlich?",
-        a: "Natürlich! Wir haben eine eigene Kinderkarte: Pennette, Tortellini, Cordon Bleu, Nuggets und sogar die Mickey-Mouse-Pizza mit Würstchen und Pommes.",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
       {
         q: "Wie viel kostet ein Essen im Durchschnitt?",
-        a: "Etwa 20-30 € pro Person. Das Gedeck kostet € 3,50. Pizzen ab € 6,80; Tagesgerichte variieren je nach Fang.",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
       {
         q: "Kann ich mit Karte zahlen?",
-        a: "[ZU BESTÄTIGEN] Wir akzeptieren die gängigen Zahlungsmethoden (Bargeld und Karten).",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
       {
         q: "Sind Haustiere erlaubt?",
-        a: "[ZU BESTÄTIGEN] Bitte fragen Sie bei der Reservierung nach.",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
       {
         q: "Gibt es Parkplätze in der Nähe?",
-        a: "[ZU BESTÄTIGEN] Das Restaurant liegt in der Via Carinzia 23, Lignano Sabbiadoro: Beschreiben Sie hier die Parkmöglichkeiten.",
+        a: "[AUSZUFÜLLEN] Antwort einfügen.",
       },
     ],
   },
@@ -184,11 +175,11 @@ export const de: Dictionary = {
     title: "Datenschutzerklärung",
     breadcrumb: "Datenschutz",
     subtitle: "Informationen zur Verarbeitung personenbezogener Daten gemäß EU-Verordnung 2016/679 (DSGVO).",
-    updated: "[ZU BESTÄTIGEN] Letzte Aktualisierung",
+    updated: "[AUSZUFÜLLEN] Letzte Aktualisierung",
     sections: [
       {
         h: "Verantwortlicher",
-        p: "[ZU BESTÄTIGEN] Firmenname, Adresse, USt-IdNr. und Kontaktdaten des Verantwortlichen.",
+        p: "[AUSZUFÜLLEN] Firmenname, Adresse, USt-IdNr. und Kontaktdaten des Verantwortlichen.",
       },
       {
         h: "Verarbeitete Daten",
@@ -196,7 +187,7 @@ export const de: Dictionary = {
       },
       {
         h: "Cookies und Dienste Dritter",
-        p: "Die Website bindet eine Google-Maps-Karte ein, die Cookies von Drittanbietern setzen kann. Details finden Sie in der Datenschutzerklärung von Google. [ZU BESTÄTIGEN] Ergänzen Sie hier die vollständige Liste der tatsächlich genutzten Dienste (z. B. Statistik).",
+        p: "Die Website bindet eine Google-Maps-Karte ein, die Cookies von Drittanbietern setzen kann. Details finden Sie in der Datenschutzerklärung von Google. [AUSZUFÜLLEN] Ergänzen Sie hier die vollständige Liste der tatsächlich genutzten Dienste (z. B. Statistik).",
       },
       {
         h: "Ihre Rechte",
@@ -209,7 +200,7 @@ export const de: Dictionary = {
     contacts: "Kontakt",
     follow: "Folgen Sie uns",
     hoursTitle: "Öffnungszeiten",
-    credits: "[ZU BESTÄTIGEN] Website erstellt von — Name/Agentur",
+    credits: "[AUSZUFÜLLEN] Website erstellt von — Name/Agentur",
   },
   cookie: {
     title: "Diese Website verwendet Cookies von Drittanbietern",

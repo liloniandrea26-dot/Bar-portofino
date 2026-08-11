@@ -1,8 +1,8 @@
 {
-  "name": "peperoncino-e-co",
+  "name": "sito-pizzeria-template",
   "version": "2.0.0",
   "private": true,
-  "description": "Sito vetrina trilingue (IT/EN/DE) di Peperoncino & Co — Ristorante a Lignano Sabbiadoro, senza e-commerce",
+  "description": "TEMPLATE sito vetrina trilingue (IT/EN/DE) per pizzeria/ristorante — da compilare, senza e-commerce",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

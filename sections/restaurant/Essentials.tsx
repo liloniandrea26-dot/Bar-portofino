@@ -4,10 +4,13 @@ import dynamic from "next/dynamic";
 import Reveal from "@/components/Reveal";
 import TiltCard from "@/components/TiltCard";
 import { restaurantConfig } from "@/data/config";
-import type { Dictionary } from "@/lib/i18n";
+import type { Dictionary, Locale } from "@/lib/i18n";
 
 const ThreeStage = dynamic(() => import("@/three/ThreeStage"), { ssr: false });
 const Pizza3D = dynamic(() => import("@/three/Pizza3D"), { ssr: false });
+
+const formatSlots = (slots: readonly (readonly string[])[]) =>
+  slots.map(([from, to]) => `${from} – ${to}`).join(" · ");
 
 /**
  * L'unica sezione della home oltre all'hero: le tre informazioni
@@ -15,16 +18,28 @@ const Pizza3D = dynamic(() => import("@/three/Pizza3D"), { ssr: false });
  * pizza 3D come tocco scenografico. Tutto il resto vive nelle
  * pagine dedicate raggiungibili dal menu.
  */
-export default function Essentials({ dict }: { dict: Dictionary }) {
+export default function Essentials({ dict, locale }: { dict: Dictionary; locale: Locale }) {
+  // Se gli orari sono uguali tutti i giorni mostra una riga sola,
+  // altrimenti rimanda alla tabella completa nella pagina Informazioni
+  const week = restaurantConfig.weekHours;
+  const allSame = week.every((d) => JSON.stringify(d) === JSON.stringify(week[0]));
+  const sample = week.find((d) => d.length > 0) ?? [];
+  const hoursLines =
+    allSame && sample.length > 0
+      ? [`${dict.hours.everydayLabel} · ${formatSlots(sample)}`]
+      : [formatSlots(sample)];
+  if (restaurantConfig.delivery) {
+    hoursLines.push(`${dict.hours.deliveryLabel} · ${restaurantConfig.delivery.hours}`);
+  }
+
   const cards = [
     {
       icon: "🕐",
       title: dict.footer.hoursTitle,
-      lines: [
-        `${dict.hours.everydayLabel} · 11:00 – 23:00`,
-        `${dict.hours.deliveryLabel} · ${restaurantConfig.delivery.hours}`,
-      ],
-      href: null,
+      lines: hoursLines,
+      href: `/${locale}/informazioni`,
+      linkLabel: dict.nav.info,
+      external: false,
     },
     {
       icon: "📍",

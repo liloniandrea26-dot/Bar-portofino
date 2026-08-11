@@ -1,17 +1,17 @@
 /**
  * Dizionario ITALIANO — fonte di verità per la struttura dei testi.
- * Tutti i campi [DA CONFERMARE] vanno sostituiti con i dati reali del cliente.
+ * Tutti i campi [DA COMPILARE] vanno sostituiti con i dati reali del cliente.
  */
 export const it = {
   langName: "Italiano",
   meta: {
-    title: "Peperoncino & Co — Ristorante a Lignano Sabbiadoro",
+    title: "[DA COMPILARE] Nome Pizzeria — Pizzeria a Città",
     description:
-      "Ristorante a Lignano Sabbiadoro: cucina italiana, piatti vegetariani, tavoli all'aperto e musica dal vivo. In Via Carinzia 23, aperti fino alle 23. Scarica il menu e vieni a trovarci.",
+      "[DA COMPILARE] Descrizione SEO della pizzeria: specialità, zona, orari. Max ~155 caratteri.",
   },
   brand: {
-    name: "Peperoncino & Co",
-    tagline: "Ristorante · Lignano Sabbiadoro",
+    name: "Nome Pizzeria",
+    tagline: "Pizzeria",
   },
   nav: {
     home: "Home",
@@ -32,16 +32,16 @@ export const it = {
   },
   hero: {
     subtitle:
-      "Pizza, pesce fresco e cucina italiana a due passi dal mare: tavoli all'aperto, musica dal vivo e serate che sanno d'estate. Tutti i giorni, dalle 11 alle 23.",
+      "[DA COMPILARE] Una frase accattivante che presenta la pizzeria in una riga: specialità, atmosfera, cosa la rende unica.",
     ctaMenu: "Apri il Menu",
     ctaInfo: "Informazioni",
   },
   about: {
     eyebrow: "Chi siamo",
     title: "La nostra storia, un piatto alla volta",
-    p1: "[DA CONFERMARE - testo proposto] Nel cuore di Lignano Sabbiadoro, Peperoncino & Co è il posto dove la cucina italiana incontra l'atmosfera della vacanza: tavoli all'aperto, piatti preparati con cura e serate che si allungano con la musica dal vivo.",
-    p2: "[DA CONFERMARE - testo proposto] La nostra carta accontenta tutti, con un'attenzione vera ai piatti vegetariani e agli ingredienti di stagione. E i numeri parlano da soli: 4,3 stelle su Google con quasi mille recensioni.",
-    badges: ["Tavoli all'aperto", "Piatti vegetariani", "Musica dal vivo", "★ 4,3 su Google"],
+    p1: "[DA COMPILARE] Prima parte del racconto: da quanto esiste la pizzeria, chi la guida, cosa la rende speciale.",
+    p2: "[DA COMPILARE] Seconda parte: la filosofia in cucina, gli ingredienti, il legame col territorio.",
+    badges: ["[DA COMPILARE] Punto di forza 1", "[DA COMPILARE] Punto di forza 2", "[DA COMPILARE] Punto di forza 3"],
   },
   menuSection: {
     eyebrow: "Il Menu",
@@ -49,7 +49,7 @@ export const it = {
     intro:
       "Scarica il menu completo in PDF oppure sfoglia le categorie qui sul sito. Nessun ordine online: il menu è solo da gustare al tavolo.",
     download: "Apri il Menu (PDF)",
-    downloadNote: "Menu Summer ufficiale in PDF — italiano, inglese e tedesco",
+    downloadNote: "[DA COMPILARE] Carica il PDF reale del menu in public/menu.pdf",
     viewOnline: "Sfoglia il menu sul sito",
     allergensLink: "Consulta la tabella allergeni",
   },
@@ -57,29 +57,20 @@ export const it = {
     title: "Il Menu",
     breadcrumb: "Menu",
     subtitle:
-      "Il menu Summer: cucina di mare e di terra, pizze con farine 100% del Friuli Venezia Giulia. Prezzo medio 20-30 € a persona.",
-    note: "Menu soggetto a variazioni stagionali e alla disponibilità del pescato. Per allergie e intolleranze consulta la pagina Allergeni o chiedi al personale di sala.",
+      "[DA COMPILARE] Sottotitolo della pagina menu: specialità e fascia prezzo.",
+    note: "Menu soggetto a variazioni stagionali. Per allergie e intolleranze consulta la pagina Allergeni o chiedi al personale di sala.",
   },
   gallery: {
     eyebrow: "La Galleria",
     title: "Uno sguardo alla nostra cucina",
     subtitle: "I piatti, la sala, le serate: il ristorante raccontato per immagini.",
-    alts: [
-      "Antipasto di mare: capesante gratinate, cozze e vongole",
-      "Maccheroni gran scogliera in padella con cozze e gamberoni",
-      "Spaghetti alla carbonara serviti al tavolo",
-      "La sala del ristorante con i tavoli apparecchiati",
-      "Pizza gourmet con pistacchi, pancetta e burrata",
-      "La sala del ristorante Peperoncino & Co",
-      "Pizza gourmet appena sfornata",
-      "I piatti di mare del ristorante",
-    ],
+    alts: Array(8).fill("Foto del locale — da sostituire") as string[],
   },
   hours: {
     eyebrow: "Orari",
     title: "Quando siamo aperti",
     closedLabel: "Chiuso",
-    note: "[DA CONFERMARE] Orari indicativi: verifica e aggiorna le fasce reali di apertura.",
+    note: "[DA COMPILARE] Nota sugli orari (es. orario continuato, chiusure stagionali).",
     days: ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"],
     everydayLabel: "Tutti i giorni",
     deliveryLabel: "Consegna a domicilio",
@@ -106,7 +97,7 @@ export const it = {
     subtitle:
       "Elenco delle 14 sostanze o prodotti che provocano allergie o intolleranze ai sensi del Reg. UE 1169/2011 (Allegato II).",
     intro:
-      "Caro ospite, se hai allergie e/o intolleranze alimentari chiedi pure informazioni sui nostri piatti: siamo preparati per consigliarti nel migliore dei modi. Qui sotto trovi le 14 sostanze individuate dalla normativa europea; le informazioni piatto per piatto sono disponibili in sala.",
+      "Alcuni piatti del nostro menu possono contenere uno o più dei seguenti allergeni. Le informazioni dettagliate piatto per piatto sono disponibili in sala: chiedi al personale prima di ordinare.",
     disclaimer:
       "Nonostante l'attenzione nella preparazione, non è possibile escludere contaminazioni crociate tra alimenti. In caso di allergia grave, segnalalo sempre al personale.",
     items: [
@@ -133,51 +124,51 @@ export const it = {
     items: [
       {
         q: "Quali sono gli orari di apertura?",
-        a: "Siamo aperti tutti i giorni dalle 11:00 alle 23:00, con orario continuato: cucina e pizzeria sempre a disposizione, dal pranzo alla sera.",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
       {
         q: "Serve prenotare?",
-        a: "La prenotazione non è obbligatoria, ma è consigliata nei weekend e nelle sere d'estate. Chiamaci o scrivici su WhatsApp al +39 0431 403099.",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
       {
         q: "Fate asporto e consegna a domicilio?",
-        a: "Sì. L'asporto si ordina telefonicamente; la consegna a domicilio è attiva tutti i giorni dalle 12:00 alle 23:00 tramite il servizio deliveryco.it.",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
       {
         q: "Avete piatti vegetariani?",
-        a: "Sì: piatto vegetariano con formaggio Dobbiaco DOP alla piastra e verdure grigliate, panino vegetariano, pizze con verdure, insalatone e molte altre proposte senza carne né pesce.",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
       {
         q: "Come gestite allergie e intolleranze?",
-        a: "Il nostro personale è preparato per consigliarti nel migliore dei modi: consulta la pagina Allergeni con le 14 sostanze del Reg. UE 1169/2011 e segnala sempre le tue esigenze prima di ordinare.",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
       {
         q: "Avete tavoli all'aperto?",
-        a: "Sì, il locale dispone di tavoli all'aperto: perfetti per pranzi e cene nelle giornate estive.",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
       {
         q: "C'è musica dal vivo?",
-        a: "Sì, organizziamo serate con musica dal vivo. [DA CONFERMARE] Il calendario aggiornato viene pubblicato sui nostri canali social.",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
       {
         q: "Siete adatti ai bambini?",
-        a: "Certo! Abbiamo un menu baby dedicato: pennette, tortellini, cordon bleu, nuggets e persino la pizza Mickey Mouse con würstel e patatine.",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
       {
         q: "Quanto si spende in media?",
-        a: "Indicativamente 20-30 € a persona. Il coperto è di € 3,50. Le pizze partono da € 6,80 e i piatti del giorno variano con il pescato.",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
       {
         q: "Si può pagare con carta?",
-        a: "[DA CONFERMARE] Accettiamo i principali metodi di pagamento (contanti, carte e bancomat).",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
       {
         q: "Gli animali sono ammessi?",
-        a: "[DA CONFERMARE] Chiedi conferma al momento della prenotazione.",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
       {
         q: "C'è parcheggio nelle vicinanze?",
-        a: "[DA CONFERMARE] Il ristorante è in Via Carinzia 23, a Lignano Sabbiadoro: indica qui le possibilità di parcheggio della zona.",
+        a: "[DA COMPILARE] Risposta da inserire.",
       },
     ],
   },
@@ -185,11 +176,11 @@ export const it = {
     title: "Privacy Policy",
     breadcrumb: "Privacy Policy",
     subtitle: "Informativa sul trattamento dei dati personali ai sensi del Reg. UE 2016/679 (GDPR).",
-    updated: "[DA CONFERMARE] Ultimo aggiornamento",
+    updated: "[DA COMPILARE] Ultimo aggiornamento",
     sections: [
       {
         h: "Titolare del trattamento",
-        p: "[DA CONFERMARE] Ragione sociale, indirizzo, P.IVA e contatti del titolare del trattamento dei dati.",
+        p: "[DA COMPILARE] Ragione sociale, indirizzo, P.IVA e contatti del titolare del trattamento dei dati.",
       },
       {
         h: "Dati trattati",
@@ -197,7 +188,7 @@ export const it = {
       },
       {
         h: "Cookie e servizi di terze parti",
-        p: "Il sito incorpora una mappa di Google Maps che può impostare cookie di terze parti. Per i dettagli consulta la privacy policy di Google. [DA CONFERMARE] Integra qui l'elenco completo dei servizi effettivamente utilizzati (es. statistiche).",
+        p: "Il sito incorpora una mappa di Google Maps che può impostare cookie di terze parti. Per i dettagli consulta la privacy policy di Google. [DA COMPILARE] Integra qui l'elenco completo dei servizi effettivamente utilizzati (es. statistiche).",
       },
       {
         h: "Diritti dell'interessato",
@@ -210,7 +201,7 @@ export const it = {
     contacts: "Contatti",
     follow: "Seguici",
     hoursTitle: "Orari",
-    credits: "[DA CONFERMARE] Sito realizzato da — nome/agenzia",
+    credits: "[DA COMPILARE] Sito realizzato da — nome/agenzia",
   },
   cookie: {
     title: "Questo sito usa cookie di terze parti",

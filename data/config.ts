@@ -1,98 +1,107 @@
 /**
  * ============================================================
- *  CONFIGURAZIONE NON LINGUISTICA — Peperoncino & Co
+ *  CONFIGURAZIONE NON LINGUISTICA — ⭐ DA COMPILARE ⭐
  * ============================================================
  *  Dati che NON dipendono dalla lingua: contatti, orari,
  *  indirizzo, link, immagini. I testi tradotti vivono invece
  *  nei dizionari in lib/i18n/ (it.ts, en.ts, de.ts).
  *
- *  ➜ I campi ancora marcati [DA CONFERMARE] vanno sostituiti
- *    con i dati reali del cliente.
+ *  ➜ Sostituisci OGNI campo marcato [DA COMPILARE] con i dati
+ *    reali del cliente. Questo file + lib/i18n/ + data/menu.ts
+ *    + le foto in public/images/ sono tutto ciò che serve
+ *    personalizzare.
  * ============================================================
  */
 
 export const restaurantConfig = {
-  name: "Peperoncino & Co",
+  /** [DA COMPILARE] Nome dell'attività (uguale in tutte le lingue) */
+  name: "Nome Pizzeria",
 
   phone: {
-    display: "+39 0431 403099",
-    href: "tel:+390431403099",
+    /** [DA COMPILARE] Numero visualizzato e link tel: senza spazi */
+    display: "+39 000 000 0000",
+    href: "tel:+390000000000",
   },
 
-  /**
-   * WhatsApp (l'attività lo espone sulla scheda Google).
-   * ➜ [DA CONFERMARE] verifica che il numero WhatsApp coincida col fisso
-   */
+  /** [DA COMPILARE] Numero WhatsApp (o rimuovi i link WhatsApp dai componenti) */
   whatsapp: {
     display: "WhatsApp",
-    href: "https://wa.me/390431403099",
+    href: "https://wa.me/390000000000",
   },
 
   email: {
-    /** [DA CONFERMARE] Email del ristorante */
-    display: "info@peperoncinoeco.it",
-    href: "mailto:info@peperoncinoeco.it",
+    /** [DA COMPILARE] Email dell'attività */
+    display: "info@nomepizzeria.it",
+    href: "mailto:info@nomepizzeria.it",
   },
 
-  address: "Via Carinzia, 23 - 33054 Lignano Sabbiadoro (UD)",
+  /** [DA COMPILARE] Indirizzo completo */
+  address: "Via Da Compilare 1 - 00000 Città (XX)",
 
-  /** [DA CONFERMARE] Partita IVA (obbligatoria nel footer) */
+  /** [DA COMPILARE] Partita IVA (obbligatoria nel footer) */
   vat: "P.IVA 00000000000",
 
-  /** Fascia di prezzo indicativa (dalla scheda Google) */
-  priceRange: "20-30 €",
+  /** [DA COMPILARE] Fascia di prezzo indicativa (es. "15-25 €") */
+  priceRange: "00-00 €",
 
   maps: {
+    /** [DA COMPILARE] Sostituisci l'indirizzo nei due link Google Maps */
     directionsUrl:
-      "https://www.google.com/maps/dir/?api=1&destination=Peperoncino+%26+Co+Via+Carinzia+23+33054+Lignano+Sabbiadoro+UD",
-    embedUrl:
-      "https://www.google.com/maps?q=Via+Carinzia+23,+33054+Lignano+Sabbiadoro+UD&output=embed",
+      "https://www.google.com/maps/dir/?api=1&destination=Via+Da+Compilare+1+Citta",
+    embedUrl: "https://www.google.com/maps?q=Via+Da+Compilare+1+Citta&output=embed",
   },
 
   social: {
-    /** [DA CONFERMARE] Profili social reali */
+    /** [DA COMPILARE] Profili social reali */
     facebook: "https://www.facebook.com/",
     instagram: "https://www.instagram.com/",
   },
 
-  /**
-   * ➜ Carica il PDF reale del menu in /public/menu.pdf
-   *   (il bottone "Scarica Menu" punta a questo percorso)
-   */
+  /** ➜ Carica il PDF reale del menu in /public/menu.pdf */
   menuPdf: "/menu.pdf",
 
   /**
-   * Orari di apertura per giorno (lunedì → domenica), confermati:
-   * tutti i giorni 11:00–23:00 con orario continuato.
+   * [DA COMPILARE] Orari di apertura per giorno (lunedì → domenica).
    * Ogni giorno è un elenco di fasce ["apertura", "chiusura"] in formato 24h.
+   * Un array vuoto [] = giorno di chiusura.
+   * Alimentano tabella orari, footer, card della home e badge Aperto/Chiuso.
    */
   weekHours: [
-    [["11:00", "23:00"]], // Lunedì
-    [["11:00", "23:00"]], // Martedì
-    [["11:00", "23:00"]], // Mercoledì
-    [["11:00", "23:00"]], // Giovedì
-    [["11:00", "23:00"]], // Venerdì
-    [["11:00", "23:00"]], // Sabato
-    [["11:00", "23:00"]], // Domenica
+    [], // Lunedì — esempio: chiuso
+    [["12:00", "14:30"], ["18:30", "23:00"]], // Martedì
+    [["12:00", "14:30"], ["18:30", "23:00"]], // Mercoledì
+    [["12:00", "14:30"], ["18:30", "23:00"]], // Giovedì
+    [["12:00", "14:30"], ["18:30", "23:30"]], // Venerdì
+    [["12:00", "14:30"], ["18:30", "23:30"]], // Sabato
+    [["12:00", "14:30"], ["18:30", "23:00"]], // Domenica
   ] as string[][][],
 
-  /** Consegna a domicilio (servizio esterno deliveryco.it, come sul menu) */
+  /**
+   * [DA COMPILARE] Consegna a domicilio: orari e link al servizio.
+   * Se il cliente non fa consegne, imposta delivery: null e le righe
+   * spariscono automaticamente da orari, footer e home.
+   */
   delivery: {
-    hours: "12:00 – 23:00",
-    url: "https://deliveryco.it",
-  },
+    hours: "00:00 – 00:00",
+    url: "https://esempio-servizio-delivery.it",
+  } as { hours: string; url: string } | null,
 } as const;
 
 /* ------------------------------------------------------------------ */
-/*  IMMAGINI — foto reali del ristorante (in /public/images)           */
+/*  IMMAGINI — segnaposto eleganti in /public/images                   */
+/*  ➜ Sostituisci i file con le foto reali (stessi nomi = zero codice) */
 /* ------------------------------------------------------------------ */
 
 export const siteImages = {
-  hero: "/images/antipasto-mare.jpg",
-  about: "/images/sala.jpg",
-  forno: "/images/gran-scogliera.jpg",
-  menuPage: "/images/pizza-gourmet.jpg",
-  interno: "/images/sala.jpg",
+  /** Foto principale dell'hero: il piatto forte o l'ambiente */
+  hero: "/images/hero.jpg",
+  /** Sezione "chi siamo" */
+  about: "/images/interno.jpg",
+  forno: "/images/piatto-1.jpg",
+  /** Intestazione della pagina menu */
+  menuPage: "/images/piatto-2.jpg",
+  /** Intestazioni pagine interne */
+  interno: "/images/interno.jpg",
 } as const;
 
 export interface GalleryImage {
@@ -100,46 +109,38 @@ export interface GalleryImage {
   alt: string;
 }
 
-/** Foto reali della galleria, con descrizioni nelle tre lingue */
+/** [DA COMPILARE] Foto della galleria con descrizioni nelle tre lingue */
 export const galleryPhotos: { src: string; alt: { it: string; en: string; de: string } }[] = [
   {
-    src: "/images/antipasto-mare.jpg",
+    src: "/images/hero.jpg",
     alt: {
-      it: "Antipasto di mare: capesante e canestrelli gratinati con sauté di cozze e vongole",
-      en: "Seafood appetizer: scallops au gratin with sautéed mussels and clams",
-      de: "Fisch-Vorspeise: gratinierte Jakobsmuscheln mit sautierten Mies- und Venusmuscheln",
+      it: "[DA COMPILARE] Descrizione della foto 1",
+      en: "[TO BE FILLED IN] Description of photo 1",
+      de: "[AUSZUFÜLLEN] Beschreibung von Foto 1",
     },
   },
   {
-    src: "/images/gran-scogliera.jpg",
+    src: "/images/piatto-1.jpg",
     alt: {
-      it: "Maccheroni gran scogliera serviti in padella con cozze e gamberoni",
-      en: "'Gran scogliera' maccheroni served in a pan with mussels and king prawns",
-      de: "Maccheroni 'Gran Scogliera' in der Pfanne mit Miesmuscheln und Riesengarnelen",
+      it: "[DA COMPILARE] Descrizione della foto 2",
+      en: "[TO BE FILLED IN] Description of photo 2",
+      de: "[AUSZUFÜLLEN] Beschreibung von Foto 2",
     },
   },
   {
-    src: "/images/carbonara.jpg",
+    src: "/images/piatto-2.jpg",
     alt: {
-      it: "Spaghetti alla carbonara serviti al tavolo",
-      en: "Spaghetti alla carbonara served at the table",
-      de: "Spaghetti alla Carbonara am Tisch serviert",
+      it: "[DA COMPILARE] Descrizione della foto 3",
+      en: "[TO BE FILLED IN] Description of photo 3",
+      de: "[AUSZUFÜLLEN] Beschreibung von Foto 3",
     },
   },
   {
-    src: "/images/pizza-gourmet.jpg",
+    src: "/images/interno.jpg",
     alt: {
-      it: "Pizza gourmet con granella di pistacchi, pancetta, melanzane e burrata",
-      en: "Gourmet pizza with chopped pistachios, bacon, aubergines and burrata",
-      de: "Gourmet-Pizza mit Pistazien, Speck, Auberginen und Burrata",
-    },
-  },
-  {
-    src: "/images/sala.jpg",
-    alt: {
-      it: "La sala del ristorante Peperoncino & Co con i tavoli apparecchiati",
-      en: "The Peperoncino & Co dining room with its set tables",
-      de: "Der Gastraum von Peperoncino & Co mit gedeckten Tischen",
+      it: "[DA COMPILARE] Descrizione della foto 4",
+      en: "[TO BE FILLED IN] Description of photo 4",
+      de: "[AUSZUFÜLLEN] Beschreibung von Foto 4",
     },
   },
 ];

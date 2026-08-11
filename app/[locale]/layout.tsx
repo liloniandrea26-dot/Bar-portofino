@@ -25,8 +25,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const dict = getDictionary(params.locale);
   return {
-    // ➜ [DA CONFERMARE] Verifica il dominio definitivo quando viene registrato
-    metadataBase: new URL("https://www.peperoncinoeco.it"),
+    // ➜ [DA COMPILARE] Sostituisci con il dominio reale del cliente
+    metadataBase: new URL("https://www.nomepizzeria.it"),
     title: {
       default: dict.meta.title,
       template: `%s | ${dict.brand.name}`,

@@ -116,16 +116,27 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
               {isOpen ? dict.status.open : dict.status.closed}
             </p>
           )}
-          {/* Orario compatto: tutti i giorni uguali + consegna a domicilio */}
+          {/* Orari per giorno + eventuale consegna a domicilio */}
           <ul className="grid gap-1.5 text-sm text-white/70">
-            <li className="flex justify-between gap-4">
-              <span>{dict.hours.everydayLabel}</span>
-              <span className="tabular-nums">11:00 – 23:00</span>
-            </li>
-            <li className="flex justify-between gap-4">
-              <span>{dict.hours.deliveryLabel}</span>
-              <span className="tabular-nums">{restaurantConfig.delivery.hours}</span>
-            </li>
+            {dict.hours.days.map((day, i) => {
+              const slots = restaurantConfig.weekHours[i];
+              return (
+                <li key={day} className="flex justify-between gap-4">
+                  <span>{day}</span>
+                  <span className="text-right tabular-nums">
+                    {slots.length === 0
+                      ? dict.hours.closedLabel
+                      : slots.map(([from, to]) => `${from}–${to}`).join(" · ")}
+                  </span>
+                </li>
+              );
+            })}
+            {restaurantConfig.delivery && (
+              <li className="mt-1 flex justify-between gap-4 border-t border-white/10 pt-2">
+                <span>{dict.hours.deliveryLabel}</span>
+                <span className="tabular-nums">{restaurantConfig.delivery.hours}</span>
+              </li>
+            )}
           </ul>
         </div>
       </div>

@@ -1,99 +1,59 @@
-# 🍕 Peperoncino & Co — sito vetrina trilingue (IT · EN · DE)
+# 🍕 TEMPLATE — Sito vetrina per pizzeria/ristorante (IT · EN · DE)
 
-Sito web di **Peperoncino & Co**, ristorante a Lignano Sabbiadoro (Via Carinzia 23).
-È un sito **di presentazione**: nessun e-commerce, nessun carrello, nessun ordine
-o pagamento online — solo contatti diretti (telefono click-to-call, email, mappa).
+Template completo e funzionante di sito vetrina per pizzeria o ristorante:
+trilingue, GDPR, allergeni, FAQ, menu digitale + PDF, **senza e-commerce**
+(niente carrello, ordini o pagamenti online — solo contatti diretti).
 
-> ⚠️ **I contenuti sono placeholder**: tutti i campi segnati `[DA CONFERMARE]`
-> (nome, contatti, orari, menu, testi) vanno sostituiti con i dati reali del
-> cliente. L'elenco completo è in fondo a questo README.
+> ⭐ **Come si usa:** tutti i punti da personalizzare sono marcati
+> `[DA COMPILARE]` (EN: `[TO BE FILLED IN]`, DE: `[AUSZUFÜLLEN]`).
+> Cerca il marcatore nel progetto e sostituisci con i dati del cliente:
+> quando non ci sono più marcatori, il sito è pronto.
 
-## Stack
+## Dove si personalizza (4 posti in tutto)
 
-- **Next.js 14** (App Router) + React + TypeScript
-- **Tailwind CSS** — palette "Bianco & Ottone": chiara, neutra, elegante
-- **Framer Motion** — micro-animazioni, reveal allo scroll, transizioni pagina
-- **React Three Fiber + drei** — particelle nell'hero e pizza 3D low-poly (fallback statico su mobile)
-- **Lenis** — smooth scroll
-- **i18n custom** — dizionari tipizzati in `lib/i18n/` con middleware di redirect lingua
+| File | Cosa contiene |
+|---|---|
+| `data/config.ts` | ⭐ Nome, telefono, WhatsApp, email, indirizzo, P.IVA, social, link mappa, **orari per giorno**, consegna a domicilio (o `null`), percorsi foto |
+| `data/menu.ts` | ⭐ Il menu: categorie e piatti con prezzi e descrizioni IT/EN/DE |
+| `lib/i18n/it.ts` + `en.ts` + `de.ts` | ⭐ Tutti i testi: titoli SEO, frase hero, chi siamo, risposte FAQ, privacy |
+| `public/` | ⭐ `menu.pdf` (il menu reale) e `images/` (le foto: stessi nomi = zero modifiche al codice) |
 
-## Avvio in locale
+Tutto il resto (pagine, componenti, stile, animazioni) funziona senza toccarlo.
+
+## Cosa include
+
+- **Home essenziale**: hero full-screen con badge Aperto/Chiuso calcolato
+  dagli orari + card orari/indirizzo/contatti + pizza 3D decorativa
+- **Pagine**: Menu (PDF apribile + menu sfogliabile a categorie), Galleria
+  con lightbox, Allergeni (14 sostanze Reg. UE 1169/2011, testo fisso già
+  tradotto), FAQ con accordion e dati strutturati, Informazioni, Privacy
+- **Trilingue IT/EN/DE** con redirect automatico dalla lingua del browser
+- **GDPR**: banner cookie, mappa Google caricata solo dopo il consenso
+- **SEO**: meta per pagina, Schema.org Restaurant + FAQPage, hreflang,
+  sitemap, robots, immagine Open Graph generata dal nome
+- **Orari flessibili**: fasce diverse per giorno, giorni di chiusura (`[]`),
+  consegna a domicilio opzionale (`delivery: null` per nasconderla ovunque)
+
+## Stack e avvio
+
+Next.js 14 + Tailwind CSS + Framer Motion + React Three Fiber (3D con
+fallback automatico su mobile) + Lenis.
 
 ```bash
 npm install
 npm run dev       # http://localhost:3000 → redirect su /it, /en o /de
+npm run build     # build di produzione
 ```
 
-Build di produzione: `npm run build && npm start`.
+Deploy consigliato: Vercel (import del repository, zero configurazione).
 
-## Struttura
+## Checklist di consegna per un nuovo cliente
 
-```
-app/[locale]/         Pagine per lingua (it/en/de)
-  page.tsx            Home: hero + chi siamo + menu + galleria + orari + mappa
-  informazioni/       Chi siamo, orari, contatti, mappa
-  menu/               Bottone PDF + menu testuale a 7 categorie
-  allergeni/          14 allergeni Reg. UE 1169/2011 (testo normativo, tradotto)
-  privacy/            Privacy Policy con struttura GDPR
-  layout.tsx          Header/Footer, font, SEO, Schema.org, banner cookie
-app/robots.ts         robots.txt
-app/sitemap.ts        sitemap.xml (tutte le pagine × 3 lingue)
-middleware.ts         Redirect / → /it|/en|/de dalla lingua del browser
-lib/i18n/             ⭐ Dizionari IT/EN/DE: TUTTI i testi del sito
-data/config.ts        ⭐ Dati non linguistici: contatti, orari, P.IVA, link, foto
-components/           Header, Footer, CookieBanner, ConsentMap, Lightbox, ...
-sections/restaurant/  Sezioni di pagina
-three/                Scene 3D (particelle, pizza) con gate performance
-public/menu.pdf       Segnaposto: sostituire col PDF reale del menu
-public/images/        Foto reali del locale (da caricare)
-```
-
-## GDPR / Cookie
-
-- **Banner cookie trilingue** al primo accesso (accetta/rifiuta, scelta salvata in
-  `localStorage`).
-- La **mappa Google** viene caricata **solo dopo il consenso**: prima mostra un
-  segnaposto con link esterno a Google Maps (nessun cookie di terze parti senza consenso).
-- Pagina **Privacy Policy** con struttura GDPR da completare con i dati del titolare.
-
-## ✏️ Dove sostituire i contenuti `[DA CONFERMARE]`
-
-### 1. `data/config.ts` — dati dell'attività
-| Campo | Cosa inserire |
-|---|---|
-| `name` | Nome dell'attività |
-| `phone` | Telefono reale (display + href `tel:`) |
-| `email` | Email reale |
-| `address` | Indirizzo completo |
-| `vat` | Partita IVA (obbligatoria nel footer) |
-| `maps.directionsUrl` / `maps.embedUrl` | Link Google Maps con l'indirizzo reale |
-| `social.facebook` / `social.instagram` | Profili social reali |
-| `weekHours` | Orari reali per giorno (fasce; `[]` = chiuso) |
-
-### 2. `lib/i18n/it.ts`, `en.ts`, `de.ts` — testi (in tutte e 3 le lingue)
-- `brand.name` — nome mostrato in logo e hero
-- `meta.title` / `meta.description` — SEO
-- `hero.subtitle` — sottotitolo dell'hero
-- `about.p1` / `about.p2` — racconto "chi siamo"
-- `menuPage.categories[...]` — nomi, descrizioni e prezzi dei piatti (7 categorie)
-- `hours.note` — nota orari
-- `privacyPage` — titolare del trattamento, servizi terzi, data aggiornamento
-- `footer.credits` — chi ha realizzato il sito
-
-### 3. File
-- `public/menu.pdf` — sostituire col PDF reale del menu
-- `public/images/` — caricare le foto reali e aggiornare gli URL in `data/config.ts`
-  (ora placeholder Unsplash)
-
-### 4. Dominio
-- `app/[locale]/layout.tsx` → `metadataBase`
-- `app/robots.ts` e `app/sitemap.ts` → `BASE_URL`
-
-## Note performance/accessibilità
-
-- Scene 3D disattivate automaticamente su mobile, dispositivi lenti e
-  `prefers-reduced-motion` (sostituite da fallback statici)
-- Immagini con `next/image` e lazy loading; 3D montato solo in viewport
-- HTML semantico, focus ring visibile, lightbox navigabile da tastiera,
-  tabella orari con markup `<table>` corretto
-- Dati strutturati Schema.org `Restaurant` + `hreflang` per le 3 lingue
+1. [ ] `data/config.ts` — dati attività, orari, delivery, P.IVA
+2. [ ] `data/menu.ts` — menu reale con prezzi
+3. [ ] `lib/i18n/*.ts` — nome, frase hero, chi siamo, FAQ (×3 lingue)
+4. [ ] `public/menu.pdf` — PDF reale del menu (< 5 MB consigliato)
+5. [ ] `public/images/` — foto reali (hero, interno, piatto-1, piatto-2)
+6. [ ] Dominio in `app/[locale]/layout.tsx`, `app/robots.ts`, `app/sitemap.ts`
+7. [ ] `npm run build` senza errori e ricerca di `DA COMPILARE` → zero risultati
+8. [ ] Al lancio: aggiornare il sito su Google Business Profile del cliente

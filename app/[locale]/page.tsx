@@ -14,7 +14,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
   return (
     <>
       <Hero dict={dict} locale={locale} />
-      <Essentials dict={dict} />
+      <Essentials dict={dict} locale={locale} />
     </>
   );
 }

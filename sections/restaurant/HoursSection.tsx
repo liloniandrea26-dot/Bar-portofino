@@ -69,11 +69,13 @@ export default function HoursSection({ dict }: { dict: Dictionary }) {
                 })}
               </tbody>
             </table>
-            {/* Riga consegna a domicilio */}
-            <div className="flex items-center justify-between border-t-2 border-linen bg-linen/60 px-6 py-4">
-              <p className="font-semibold">🛵 {dict.hours.deliveryLabel}</p>
-              <p className="tabular-nums text-ink/80">{restaurantConfig.delivery.hours}</p>
-            </div>
+            {/* Riga consegna a domicilio (solo se il servizio esiste) */}
+            {restaurantConfig.delivery && (
+              <div className="flex items-center justify-between border-t-2 border-linen bg-linen/60 px-6 py-4">
+                <p className="font-semibold">🛵 {dict.hours.deliveryLabel}</p>
+                <p className="tabular-nums text-ink/80">{restaurantConfig.delivery.hours}</p>
+              </div>
+            )}
           </div>
           <p className="mt-4 text-center text-sm text-ink/50">{dict.hours.note}</p>
         </Reveal>
